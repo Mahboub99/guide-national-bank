@@ -1,0 +1,22 @@
+.footer{
+	display: flex;	
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer__left{
+	width: 50%;
+	padding-left: 10px;
+	text-align: left;
+}
+.footer__right{
+	width: 50%;
+	padding-right: 10px;
+	text-align: right;
+}
+.footer__left--img{
+	width: 70px;
+}
+.footer__right--img{
+	width: 220px;
+}
