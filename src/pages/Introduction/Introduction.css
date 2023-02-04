@@ -1,0 +1,27 @@
+.introduction{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+}
+.introduction__text{
+	font-family: 'Tajawal', sans-serif;
+	font-size: 20px;
+	color:white;
+	display: block;
+	text-align: left;
+	margin-left: 15px;
+}
+.introduction__container{
+	background-color: #00643E;
+	width:40%;
+	border-radius:28px; 
+	padding: 20px 20px 0px;
+}
+
+@media screen and (max-width: 768px) {
+	.introduction__container{
+		width: 80%;
+	}
+}
+	

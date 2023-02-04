@@ -5,20 +5,22 @@ import {
   Routes,
  } from 'react-router-dom'; 
 
-import Home  from './pages/Home/Home';
-
+ import Home from './pages/Home/Home';
+import Introduction from './pages/Introduction/Introduction';
 import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header'; 
+
+import Registration from './pages/Registr/Registration';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-			<Header />
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/introduction" element={<Introduction />} />
+					<Route path="/registration" element={<Registration />} />
 				</Routes>
 			</Router>
 			<Footer />

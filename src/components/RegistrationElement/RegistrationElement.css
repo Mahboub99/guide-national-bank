@@ -1,0 +1,50 @@
+.registrationElement__container{
+	margin-top:0;
+	padding-top:0;
+	width:100px;
+	height: 400px;
+	background-color: #00643E;
+}
+.registrationElement__circle{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-top: 0;
+	padding-top: 0;
+	margin-top:-50px;
+	background-color: #F49E3B;
+}
+
+.registrationElement__circle--text{
+	font-family: 'Tajawal', sans-serif;
+	font-size: 20px;
+	color:white;
+	display: block;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.registrationElement__container--text{
+	font-family: 'Tajawal', sans-serif;
+	font-size: 20px;
+	color:white;
+	display: block;
+	text-align: center;
+}
+/* custom select drrop down menue with the arrow hidden */
+.registrationElement__select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M7 10l5 5 5-5z"/></svg>') no-repeat right #00643E;
+	background-size: 10px;
+	border: none;
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700;
+	height: 50px;
+	padding: 0 10px;
+	width: 100%;
+}

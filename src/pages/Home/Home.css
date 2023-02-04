@@ -1,17 +1,25 @@
 .home__container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
 }
 .home__left {
 	width: 50%;
 	justify-content: center;
-	padding-top: 200px;
 }
 .home__left--text {
 	width: 100%;
 	font-family: 'Tajawal', sans-serif;
+	display:block;
+	font-size: 80px;
+	font-weight: 700;
+	color:#00643E;
 }
 .home__right {
 	width: 50%;
+	padding-right: 50px;
+	
 }
 .home__right--image{
 	width:100%;
@@ -19,4 +27,14 @@
 .home__left--text{
 	width: 100%;
 	text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+	.home__left--text{
+		font-size: 50px;
+	}
+	.home__right{
+		display: none;
+	}
 }
