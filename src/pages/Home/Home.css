@@ -1,8 +1,12 @@
+.home{
+	height: 100vh;
+}
+
 .home__container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 500px;
+	height: 80%;
 }
 .home__left {
 	width: 50%;

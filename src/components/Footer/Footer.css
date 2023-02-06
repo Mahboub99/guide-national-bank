@@ -1,8 +1,10 @@
 .footer{
 	display: flex;	
-	position: absolute;
-  bottom: 0;
-  width: 100%;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	z-index: 20;
 }
 .footer__left{
 	width: 50%;
@@ -15,8 +17,18 @@
 	text-align: right;
 }
 .footer__left--img{
-	width: 70px;
+	width: 10%;
 }
 .footer__right--img{
-	width: 220px;
+	width: 30%;
+}
+
+/*for small screen  resize images*/
+@media screen and (max-width: 768px) {
+	.footer__left--img{
+		width: 20%;
+	}
+	.footer__right--img{
+		width: 60%;
+	}
 }

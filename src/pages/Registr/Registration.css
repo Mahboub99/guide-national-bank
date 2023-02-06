@@ -1,6 +1,13 @@
+/*space between*/
+.registration{
+	margin-bottom: 200px;
+}
 .registration__container{
+	margin-top: 15%;
 	display: flex;
+	flex-flow: row-reverse wrap;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 75%;
+	
 }

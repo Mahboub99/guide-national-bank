@@ -1,50 +1,46 @@
 .registrationElement__container{
-	margin-top:0;
-	padding-top:0;
-	width:100px;
-	height: 400px;
+	width:300px;
+	height: 350px;
+	justify-content: center; 
+	position: relative;
+	border-radius:28px;
 	background-color: #00643E;
+	margin:40px
 }
+
 .registrationElement__circle{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-top: 0;
-	padding-top: 0;
 	margin-top:-50px;
 	background-color: #F49E3B;
+	position: absolute;
+	left: 120px;
+	top: 25px;
+
 }
 
 .registrationElement__circle--text{
 	font-family: 'Tajawal', sans-serif;
-	font-size: 20px;
+	font-size: 25px;
 	color:white;
 	display: block;
 	text-align: center;
-	margin-top: 30px;
+	padding-top: 15px;
 }
-
 .registrationElement__container--text{
 	font-family: 'Tajawal', sans-serif;
 	font-size: 20px;
 	color:white;
-	display: block;
 	text-align: center;
+	width: 80%;
+	position: relative;
+	margin:auto;
+	top: 100px;
 }
-/* custom select drrop down menue with the arrow hidden */
-.registrationElement__select{
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M7 10l5 5 5-5z"/></svg>') no-repeat right #00643E;
-	background-size: 10px;
-	border: none;
-	border-radius: 0;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	font-weight: 700;
-	height: 50px;
-	padding: 0 10px;
-	width: 100%;
+.registrationElement__container--select{
+	width: 80%;
+	position: relative;
+	margin:auto;
+	top: 150px;
 }

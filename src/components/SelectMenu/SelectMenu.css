@@ -1,0 +1,88 @@
+:root {
+    --bg-clr: #8681ce;
+    --white: #fff;
+    --dd-list-hvr: #e7e3ff;
+    --text-clr: #2c3e50;
+    --option-clr: #E2DEDD
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Tajawal', sans-serif;;
+  }
+  
+  .select_wrap {
+    width: 225px;
+    margin: 10px auto;
+    position: relative;
+  }
+  
+  .select_wrap .default_option {
+    background: var(--white);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--option-clr);
+  }
+  
+  .select_wrap .default_option .icon {
+    position: absolute;
+    top: 10px;
+    right: 85%;
+    font-size: 20px;
+    height: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  .select_wrap .default_option li {
+    padding: 8px 20px;
+    font-weight: 700;
+    height: 40px;
+    padding-top: 15px;
+  }
+  
+  .select_wrap .select_ul {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 8px;
+    display: none;
+  }
+  
+  .select_wrap .select_ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: var(--option-clr);
+  }
+  
+  .select_wrap .select_ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .select_wrap .select_ul li:hover,
+  .select_wrap .select_ul li.active {
+    background: var(--dd-list-hvr);
+  }
+  
+  .select_wrap .option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .select_wrap.active .select_ul {
+    display: block;
+  }
+  
+  .select_wrap.active .default_option .icon {
+    top: 13px;
+    transform: rotate(180deg);
+  }
+  

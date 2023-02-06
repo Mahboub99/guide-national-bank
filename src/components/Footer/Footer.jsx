@@ -6,13 +6,16 @@ import leftIMage from '../../assets/25Sana.png'
 // import NBE logo from assets
 import rightIMage from '../../assets/NBA.png'
 
+// import  GuideModal 
+import GuideModal from '../GuideModal/GuideModal'
+
 import './Footer.css'
 
 function Footer() {
 	return (
 		<footer className="footer">
 			<div className="footer__left">
-				<img class="footer__left--img" src={leftIMage} alt="25sana" />
+				<GuideModal />
 			</div>
 			<div className="footer__right">
 				<img class="footer__right--img" src={rightIMage} alt="NBA" />

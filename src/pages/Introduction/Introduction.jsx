@@ -16,7 +16,7 @@ function Introduction() {
 				لعرض المسار التدريبي والبرامج والموضوعات الخاصة بكم.مجموعة الموارد البشرية	
 			</p>
 			
-			<Link to="/home" className="introduction__link">
+			<Link to="/registration" className="introduction__link">
 				<NBEButton text="التالي" marginBottom ="-100px" />
 			</Link>
 			</div>

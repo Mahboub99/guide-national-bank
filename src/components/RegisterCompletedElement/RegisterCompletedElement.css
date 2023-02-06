@@ -1,0 +1,60 @@
+.registerCompletedElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.registerCompletedElement__container{
+    width:350px;
+    height: 150px;
+    border-radius:28px;
+    background-color: #00643E;
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*on hover change text and background*/
+.registerCompletedElement__container:hover{
+    cursor: pointer;
+    background-color: #F49E3B;
+}
+
+.registerCompletedElement__container--image{
+	width:50px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+.registerCompletedElement__text{
+    width: 80%;
+    text-align: center;
+    
+}
+
+.registerCompletedElement__text--hover{
+    display: none;
+}
+
+.registerCompletedElement__container:hover .registerCompletedElement__text--hover{
+    display: block;
+}
+
+.registerCompletedElement__container:hover .registerCompletedElement__text--main{
+    display: none;
+}
+
+.registerCompletedElement__container2{
+    width:15%;
+    text-align: left;
+}
+/*on hover of container1 diapper the containert 2*/
+.registerCompletedElement__container:hover .registerCompletedElement__container2{
+    display: none;
+}

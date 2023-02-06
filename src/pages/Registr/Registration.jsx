@@ -6,20 +6,48 @@ import RegistrationElement from '../../components/RegistrationElement/Registrati
 
 import './Registration.css';
 
-// function component  RegistrationElement with props
+const registrationElements = [
+	{
+		number: '١',
+		text: 'برجاء إختيار المجموعة',
+		selectList: ['المجموعة أ', 'المجموعة ب', 'المجموعة ج']
+	},
+	{
+		number: '٢',
+		text: 'برجاء إختيار القطاع',
+		selectList: ['القطاع الأول', 'القطاع الثاني', 'القطاع الثالث']
+	},
+	{
+		number: '٣',
+		text: 'برجاء إختيار الدرجة الوظيفية',
+		selectList: ['الدرجة الأولى', 'الدرجة الثانية', 'الدرجة الثالثة']
+	}
+];
+/*
+ redner every  element component(CONDETIONAL RENDERING) after select the group and the sector and the job level
+ */
 
-const selectList = ["ا" , "ب" , "ج" ];
+ 
 
 function Registration() {
 	return (
 		<div className="registration">
 			<div className="registration__container">
-
-					<RegistrationElement
-						number="1"
-						selectList= {selectList}
-					/>
+				{/*loop over registrationElement */}
+				{registrationElements.map((element, index) => {
+					return (
+						<RegistrationElement
+							key={index}
+							number={element.number}
+							text={element.text}
+							selectList={element.selectList}
+						/>
+					);
+				})}
 				</div>
+				<Link to="/registerCompleted" className="registration__link">
+					<NBEButton text="تسجيل" marginBottom ="-100p" />
+				</Link>
 			</div>
 	);
 }

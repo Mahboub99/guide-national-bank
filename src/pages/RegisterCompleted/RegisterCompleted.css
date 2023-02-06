@@ -1,0 +1,25 @@
+.registerCompleted{
+    margin-bottom: 200px;
+	margin: auto;
+	width: 80%;
+	margin-top: 10%;
+	margin-bottom: 200px;
+}
+
+.registerCompleted__container{
+	margin-top: 5%;
+	display: flex;
+	flex-flow: row-reverse wrap;
+	justify-content: center;
+	align-items: center;
+	height: 75%;
+	margin-bottom: 40px;
+}
+
+.registerCompleted__text{
+	font-family: 'Tajawal', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #00643E;
+	text-align: center;
+}
