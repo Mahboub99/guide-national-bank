@@ -1,0 +1,81 @@
+.ELearningModalOption{
+    width:50%;
+    text-align: center;
+  }
+  
+  .ELearningModalOption__container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ELearningModalOption__container--main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(255, 255, 255,0.95);
+    margin: auto;
+    border: 1px solid #888;
+    width: 60%;
+    height: 600px;
+    border-radius: 28px;    
+  }
+  /*for small  screen make width 90%*/
+  @media screen and (max-width: 600px) {
+  .ELearningModalOption__container--main {
+    width: 90%;
+  }
+  }
+  
+  .ELearningModalOption__container--closeContainer{
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    top:15px;
+    right: 15px;
+    cursor: pointer;
+  }
+  
+  .ELearningModalOption__container--close{
+    width: 30px;
+  }
+  
+  .ELearningModalOption__container--close:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+  }
+  
+  .ELearningModalOption__container--option{
+    width: 90%;
+    
+    height: 50px;
+    border-radius: 10px;
+    background-color: #00643E;
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+   }
+  
+  .ELearningModalOption__container--option:hover{
+    cursor: pointer;
+    border: 5px solid #F49E3B;
+  }
+  .ELearningModalOption__container--option--textContainer{
+    width: 75%;
+    font-size: 20px;
+  }

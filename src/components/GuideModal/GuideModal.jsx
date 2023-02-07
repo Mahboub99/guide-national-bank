@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import GuideModalOption from '../GuideModalOption/GuideModalOption';
+import ELearning from '../ELearning/ELearning';
+
 import leftIMage from '../../assets/25Sana.png' 
 import closeImg from '../../assets/close.png' 
 import guideOptionImg1 from '../../assets/guideOptionImg1.png'
@@ -16,7 +18,7 @@ const options = [
   {
     text: 'منصات التعلم الرقمي',
     icon: guideOptionImg1,
-    component: <OptionElement />
+    component: <ELearning />
   },
   {
     text: 'تطوير مهارات اللغة الانجليزية',

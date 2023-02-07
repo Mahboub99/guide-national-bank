@@ -1,0 +1,51 @@
+.eLearning{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.eLearning__options{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.eLearning__img{
+    width: 50%;
+    text-align: center;
+}
+/*for small screen display non for img*/
+@media screen and (max-width: 768px) {
+  .eLearning__img {
+    display: none;
+  }
+  .eLearning__options{
+    width: 100%;
+  }
+}
+/*
+make eLearningMainImg__container amd eLearningMainImg
+HAVE THE SAME HEIGHT
+*/
+.eLearningMainImg__container{
+    display: flex;
+    text-align: center;
+    margin: auto;
+    background-color: #F49E3B;
+    transform: rotate(-38deg);
+    width: 75%;
+    height: auto;
+    border-radius: 70px;
+    
+}
+
+.eLearningMainImg{
+   
+    width: 100%;
+    margin-top: 3%;
+    margin-left: 3%;
+}

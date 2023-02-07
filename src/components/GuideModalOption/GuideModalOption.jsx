@@ -35,7 +35,7 @@ function OptionElement(props){
       <OptionElement  text={props.text} icon={props.icon}  onClick={toggleGuideModalOption} />
      
       {showGuideModalOption && (
-        <div id="inner-modal-container" className='guideModalOption__container'>
+        <div  className='guideModalOption__container'>
           <div className='guideModalOption__container--main'>
             <div className='guideModalOption__container--closeContainer'>
                 <img className='guideModalOption__container--close' onClick={toggleGuideModalOption} src={closeImg} alt="close" />
