@@ -12,10 +12,10 @@ import Footer from './components/Footer/Footer';
 import Registration from './pages/Registr/Registration';
 import RegisterCompleted from './pages/RegisterCompleted/RegisterCompleted';
 
-
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
 			<Router>

@@ -6,9 +6,56 @@
     background-position: center;
     width: 100%;
     height: 100%;
-    display: flex;
     border-radius: 28px;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items: top;
+    flex-flow: row nowrap;
+}
+
+.eLearningOptionPage__img{
+    width: 50%;
+    text-align: center;
+}
+.eLearningOptionPage__img--phone{
+    width: 45%;
+    /*rotate imge anit clock wise*/
+    transform: rotate(-10deg);
+    margin: auto;
+}
+.eLearningOptionPage__text{
+    width: 50%;
+    text-align: right;
+    font-size: 20px;
+    padding-right: 50px;
+    font-weight: 700;
+    
+}
+/*for small  screen  display none for the image*/
+@media screen and (max-width: 1200px) {
+    .eLearningOptionPage__img {
+        display: none;
+    }
+
+    .eLearningOptionPage__text{
+        width: 100%;
+        font-size: 14px;
+        padding-left: 20px;
+    }
+}
+
+.eLearningOptionPage__text--green{
+    color: #00643E;
+}
+
+.eLearningOptionPage__text--orange{
+    color: #F49E3B;
+}
+
+.eLearningOptionPage--margin-50{
+    margin-top: 50px;
+}
+
+.eLearningOptionPage--margin-100{
+    margin-top: 100px;
 }

@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import startBage from '../../assets/startBage.png';
 import NBEButton from '../../components/NBEButton/NBEButton';
 
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from '../../redux/counterSlice'
+
 import './Home.css';
 
 function Home() {
+	const count = useSelector((state) => state.counter.value)
+	const dispatch = useDispatch()
+
 	return (
 		<div className="home">
 			<div className="home__container">

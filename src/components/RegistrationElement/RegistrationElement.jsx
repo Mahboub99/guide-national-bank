@@ -7,8 +7,6 @@ import SelectMenu from '../SelectMenu/SelectMenu';
 
 import './RegistrationElement.css';
 
-const options = ['المجموعة أ', 'المجموعة ب', 'المجموعة ج'];
-
 function RegistrationElement(props) {
 	return (
 		<div className="registrationElement">
@@ -19,7 +17,7 @@ function RegistrationElement(props) {
 				
 				<p className="registrationElement__container--text">{props.text}</p>
 				<div className='registrationElement__container--select'>
-					<SelectMenu defaultText="اسم المجموعة" options={options}/>		
+					<SelectMenu defaultText={props.defaultText}  options={props.selectList}/>		
 				</div>
 			</div>
 		</div>

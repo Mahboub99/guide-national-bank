@@ -70,6 +70,14 @@
   align-items: center;
   margin: 10px auto;
  }
+ /*for small screen make it 80%*/
+  @media screen and (max-width: 1200px) {
+    .guideModalOption__container--option {
+      width: 80%;
+      font-size: 14px;
+    }
+  }
+
 
 .guideModalOption__container--option:hover{
   cursor: pointer;

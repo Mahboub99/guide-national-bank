@@ -1,15 +1,17 @@
 // react function component ELearningOptionPage
 
 import React from 'react';
-// import ELearningBg from '../../assets/eLearningBg.png';
-import ELearningBgImg from '../../assets/ELearningBg.png';
+
 
 import './ELearningOptionsPages.css';
 
-function ELearningOptionPage() {
+function ELearningOptionPage(props) {
     return (
         <div className='eLearningOptionPage'>
-            <h1>ELearningOptionPage</h1>
+            <div className='eLearningOptionPage__img' >
+                <img className='eLearningOptionPage__img--phone' src={props.img} alt="phone" />
+            </div> 
+           {props.textComponent}
         </div>
     )
 }

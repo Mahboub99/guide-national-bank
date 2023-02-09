@@ -2,7 +2,11 @@
 
 import React, { useState } from 'react';
 import GuideModalOption from '../GuideModalOption/GuideModalOption';
+
 import ELearning from '../ELearning/ELearning';
+import EnglishLearning from '../EnglishLearning/EnglishLearning';
+import GeneralInstructions from '../GeneralInstructions/GeneralInstructions';
+import AskHumanResources from '../AskHumanResources/AskHumanResources';
 
 import leftIMage from '../../assets/25Sana.png' 
 import closeImg from '../../assets/close.png' 
@@ -23,27 +27,19 @@ const options = [
   {
     text: 'تطوير مهارات اللغة الانجليزية',
     icon: guideOptionImg2,
-    component: <OptionElement />
+    component: <EnglishLearning />
   },
   {
     text: 'ضوابط عامة',
     icon: guideOptionImg3,
-    component: <OptionElement />
+    component: <GeneralInstructions />
   },
   {
     text: 'أسال الموارد البشرية',
     icon: guideOptionImg4,
-    component: <OptionElement />
+    component: <AskHumanResources />
   }
-]
-
-function OptionElement(){
-  return (
-    <div className='guideModalOption__container--option'>
-      <p>Option 1</p>
-    </div>
-  )
-}
+];
 
 function GuideModal() {
   // State to control the visibility of the outer modal
