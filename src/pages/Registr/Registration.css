@@ -6,8 +6,9 @@
 	margin-top: 15%;
 	display: flex;
 	flex-flow: row-reverse wrap;
-	justify-content: center;
+	justify-content: right;
 	align-items: center;
+	padding-right: 15%;
 	height: 75%;
 	
 }

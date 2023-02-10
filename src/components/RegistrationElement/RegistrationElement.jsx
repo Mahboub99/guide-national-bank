@@ -5,6 +5,7 @@ import React from 'react';
 // from components SelectMenu 
 import SelectMenu from '../SelectMenu/SelectMenu';
 
+
 import './RegistrationElement.css';
 
 function RegistrationElement(props) {
@@ -17,7 +18,7 @@ function RegistrationElement(props) {
 				
 				<p className="registrationElement__container--text">{props.text}</p>
 				<div className='registrationElement__container--select'>
-					<SelectMenu defaultText={props.defaultText}  options={props.selectList}/>		
+					<SelectMenu defaultText={props.defaultText}  options={props.selectList} nextChoice={props.nextChoice}/>		
 				</div>
 			</div>
 		</div>

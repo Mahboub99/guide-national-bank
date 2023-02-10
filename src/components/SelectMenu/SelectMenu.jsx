@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setRegister } from '../../redux/registerSlice'; 
+
+
 import './SelectMenu.css';
 
 function SelectMenu(props) {
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState(props.defaultText);
-
-  const options = ['Recommended', 'Latest', 'Avg Customer Roting', 'Price: Low to High', 'Price: High to Low'];
-
   const toggleDropdown = () => setOpen(!isOpen);
   const selectOption = (option) => {
     setSelected(option);
+    dispatch(setRegister({value: props.nextChoice}));
     setOpen(false);
   };
+  const  register = useSelector((state) => state.register.value);
+  const dispatch = useDispatch();
 
   return (
     <div className={`select_wrap ${isOpen ? 'active' : ''}`}>
