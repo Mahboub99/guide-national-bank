@@ -12,3 +12,11 @@
 	height: 75%;
 	
 }
+
+/*for small screen registration__container justify conen center*/
+@media screen and (max-width: 1000px  ) {
+	.registration__container{
+		justify-content: center;
+		padding-right: 0;
+	}
+}
