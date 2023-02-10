@@ -18,6 +18,24 @@
     text-align: center;
     position: relative;
 }
+.trainingPlan__arrow--right{
+    position: absolute;
+    width: 100px;
+    top: 40%;
+    right: -70px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.trainingPlan__arrow--left{
+    position: absolute;
+    width: 100px;
+    top: 40%;
+    left: -70px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    
+}
 
 .trainingPlan__content{
     width: 90%;
@@ -72,7 +90,7 @@
 
 .courseCard{
     width: 270px;
-    height: 350px;
+    height: 90%;
     border-radius: 10px;
     background-color: white;     
     margin:10px;
@@ -117,10 +135,32 @@
     margin: auto;
 }
 
+.trainingPlan__buttons{
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainingPlan__Link{
+    margin-right:15%;
+}
 
 /*for small  screen disply none for img*/
 @media screen and (max-width: 768px  ) {
     .navOption__text{
         display: none;
     }
+    /*
+    make arrows smaller*/
+    .trainingPlan__arrow--right{
+        width: 30px;
+        right: -30px;
+    }
+    .trainingPlan__arrow--left{
+        width: 30px;
+        left: -30px;
+    }
+
 }

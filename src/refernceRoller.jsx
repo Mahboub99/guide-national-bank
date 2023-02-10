@@ -7,7 +7,7 @@ const Roller = ({ components }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 992) {
-        setItemsPerPage(3);
+        setItemsPerPage(4);
       } else if (window.innerWidth >= 768) {
         setItemsPerPage(2);
       } else {
