@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NBEButton from '../../components/NBEButton/NBEButton';
 import RegistrationElement from '../../components/RegistrationElement/RegistrationElement';
-import { useSelector, useDispatch } from 'react-redux';
-import { setRegister } from '../../redux/registerSlice';
+import { useSelector} from 'react-redux';
+
 
 import './Registration.css';
 
@@ -46,7 +46,7 @@ const registrationElements = [
 
 
 function Registration() {
-	const dispatch = useDispatch();
+	
 	const register = useSelector((state) => state.register);
 	
 	return (

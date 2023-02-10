@@ -1,0 +1,126 @@
+.trainingPlan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.trainingPlan__container{
+    display: flex; 
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 55%;
+    background-color: #00643E;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.trainingPlan__content{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.trainingPlan__nav{  
+    position: absolute;
+    border-radius: 14px;
+    height:80px ;
+    width: 90%;
+    background-color: #005836;
+    top: -40px;
+    left: 5%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.navOption{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 80%;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.navOption:hover{
+    background-color: #F49E3B;
+}
+
+.navOption__active{
+    background-color: #F49E3B;
+}
+
+.navOption__img{
+    width:30px;
+}
+
+.navOption__text{
+ width: 80%;
+ color: white;
+ font-size: 16px;
+}
+
+.courseCard{
+    width: 270px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: white;     
+    margin:10px;
+}
+.courseCard__upperCard{
+    background-color: #E8EEF1;
+    height: 60%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.courseCard__upperCard--title{
+    margin: auto; 
+    padding-top: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.courseCard__upperCard--text{
+    margin: auto; 
+    padding : 20px;
+    font-size: 16px;
+}
+
+.courseCard__lowerCard{
+    padding:20px;
+}
+.courseCard__lowerCard--element{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.courseCard__lowerCard--text{
+    text-align: left;
+    width: 70%;
+}
+.courseCard__lowerCard--icon-container{
+    width: 30%;
+    text-align: right;
+}
+.courseCard__lowerCard--icon{
+    width: 20px;
+    margin: auto;
+}
+
+
+/*for small  screen disply none for img*/
+@media screen and (max-width: 768px  ) {
+    .navOption__text{
+        display: none;
+    }
+}

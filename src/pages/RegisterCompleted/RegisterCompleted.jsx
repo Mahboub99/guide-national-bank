@@ -36,7 +36,7 @@ function RegisterCompleted() {
                 })}
               
             </div>
-            <Link to="/login" className="registerCompleted__link">
+            <Link to="/trainingPlan" className="registerCompleted__link">
                 <NBEButton text="عرض المسار التدريبي" marginBottom="-100px" />
             </Link>
         </div>

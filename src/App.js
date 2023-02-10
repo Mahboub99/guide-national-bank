@@ -8,9 +8,9 @@ import {
 import Home from './pages/Home/Home';
 import Introduction from './pages/Introduction/Introduction';
 import Footer from './components/Footer/Footer';
-
 import Registration from './pages/Registr/Registration';
 import RegisterCompleted from './pages/RegisterCompleted/RegisterCompleted';
+import TrainingPlan from './pages/TrainingPlan/TrainingPlan';
 
 import './App.css';
 
@@ -24,6 +24,7 @@ function App() {
 					<Route path="/introduction" element={<Introduction />} />
 					<Route path="/registration" element={<Registration />} />
 					<Route path="/registerCompleted" element={<RegisterCompleted />} />
+					<Route path="/trainingPlan" element={<TrainingPlan />} />
 				</Routes>
 			</Router>
 			<Footer />
