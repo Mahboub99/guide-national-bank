@@ -1,0 +1,56 @@
+.EnglishLearningModalButton{
+    width:50%;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .EnglishLearningModalButton__container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .EnglishLearningModalButton__container--main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(255, 255, 255,0.95);
+    margin: auto;
+    border: 1px solid #888;
+    width: 60%;
+    height: 600px;
+    border-radius: 28px;    
+  }
+  /*for small  screen make width 90%*/
+  @media screen and (max-width: 600px) {
+  .EnglishLearningModalButton__container--main {
+    width: 90%;
+  }
+  }
+  
+  .EnglishLearningModalButton__container--closeContainer{
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    top:15px;
+    right: 15px;
+    cursor: pointer;
+  }
+  
+  .EnglishLearningModalButton__container--close{
+    width: 30px;
+  }
+  
+  .EnglishLearningModalButton__container--close:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+  }

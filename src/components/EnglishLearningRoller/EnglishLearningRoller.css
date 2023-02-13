@@ -1,0 +1,144 @@
+.englishLearningRoller{
+    width: 100%;
+    justify-content: center;
+}
+.englishLearningRoller__textContainer{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: 10px; 
+    border-radius: 14px;
+    background-color: #00643E;
+    color: #fff;
+    padding: 25px ;
+    position: relative;
+}
+
+.englishLearningRoller__img{
+    top: -75%;
+    position: absolute;
+    z-index: 1;
+    right: -15%;
+    width: 90%;
+}
+
+
+.englishLearningRoller__text{
+    margin-right: 45%;
+    text-align: right;
+    font-size: 20px;
+}
+
+
+
+.englishLearningRoller__button{
+    text-align: left;
+    width: 80%;
+    padding-left: 15%;
+}
+
+
+
+/*for small  screen display none for image*/
+@media screen and (max-width: 1400px) {
+    .englishLearningRoller__img{
+        display: none;
+    }
+    .englishLearningRoller__text{
+        margin-right: 0;
+        text-align: center;
+    }
+    .englishLearningRoller__button{
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+
+@media screen and (min-width: 1500px) {
+    .englishLearningRoller__img{
+        width: 85%;
+        right: -14%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 40%;
+    }
+}
+
+/*if screen > 1600 */
+@media screen and (min-width: 1600px) {
+    .englishLearningRoller__img{
+        width: 80%;
+        right: -12%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 35%;
+    }
+}
+
+
+
+/*if screen > 1800 */
+@media screen and (min-width: 1800px) {
+    .englishLearningRoller__img{
+        width: 70%;
+        right: -10%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 35%;
+    }
+}
+
+/*if screen > 2000 */
+@media screen and (min-width: 2000px) {
+    .englishLearningRoller__img{
+        width: 60%;
+        right: -8%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 30%;
+    }
+}
+
+/*if screen > 2200 */
+@media screen and (min-width: 2200px) {
+    .englishLearningRoller__img{
+        width: 50%;
+        right: -6%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 25%;
+    }
+}
+
+/*if screen > 2400 */
+@media screen and (min-width: 2400px) {
+    .englishLearningRoller__img{
+        width: 40%;
+        right: -4%;
+    }
+    .englishLearningRoller__text{
+        margin-right: 20%;
+    }
+}
+
+.englishLearningRoller__textContainer--leftArrow{
+    position: absolute;
+    top: 50%;
+    left:-25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width:30px;
+    z-index: 2;
+}
+
+.englishLearningRoller__textContainer--rightArrow{
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width:30px;
+    z-index: 2;
+}

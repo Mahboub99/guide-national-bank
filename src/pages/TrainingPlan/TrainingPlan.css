@@ -1,9 +1,12 @@
 .trainingPlan{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+
+
 }
 
 .trainingPlan__container{
@@ -105,14 +108,15 @@
 .courseCard__upperCard--title{
     margin: auto; 
     padding-top: 40px;
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 700;
 }
 
 .courseCard__upperCard--text{
     margin: auto; 
     padding : 20px;
-    font-size: 16px;
+    font-size: 12px;
+    overflow: auto;
 }
 
 .courseCard__lowerCard{
@@ -125,6 +129,7 @@
 .courseCard__lowerCard--text{
     text-align: left;
     width: 70%;
+    font-size: 10px
 }
 .courseCard__lowerCard--icon-container{
     width: 30%;

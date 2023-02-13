@@ -25,6 +25,7 @@ const completed = [
 // RegisterCompleted function component put  RegisterCompletedElement component in it on container and then a nbebutton outside the container 
 function RegisterCompleted() {
     return (
+        
         <div className="registerCompleted">
             <p className='registerCompleted__text' >نشكركم على استكمال البيانات</p>
             <p className='registerCompleted__text'>فيما يلي سيتم عرض المسار التدريبي المخصص لكم مقسم الى 5 اقسام أساسية</p>

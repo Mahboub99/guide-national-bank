@@ -10,6 +10,8 @@ function SelectMenu(props) {
   const [selected, setSelected] = useState(props.defaultText);
   const toggleDropdown = () => setOpen(!isOpen);
   const selectOption = (option) => {
+    // save the selected option in the local storage with the name of defaultText
+    localStorage.setItem(props.defaultText, option);
     setSelected(option);
     dispatch(setRegister({value: props.nextChoice}));
     setOpen(false);

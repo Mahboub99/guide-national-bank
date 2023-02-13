@@ -1,8 +1,16 @@
 .englishLearning{
     width: 100%;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: row;
 }
 
+.englishLearning__textContainer{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: 20px; 
+    border-radius: 14px;
+    background-color: #00643E;
+    color: #fff;
+    padding: 40px ;
+
+}

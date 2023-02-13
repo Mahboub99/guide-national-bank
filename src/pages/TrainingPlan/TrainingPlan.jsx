@@ -9,15 +9,25 @@ import completed3 from '../../assets/completed.png';
 import completed4 from '../../assets/completed4.png';
 import completed5 from '../../assets/completed5.png';
 
+
+import courseIcon1 from '../../assets/courseIcon1.png';
+import courseIcon2 from '../../assets/courseIcon2.png';
+import courseIcon3 from '../../assets/courseIcon3.png';
+import courseIcon4 from '../../assets/courseIcon4.png';
+import courseIcon5 from '../../assets/courseIcon5.png';
+import courseIcon6 from '../../assets/courseIcon6.png';
+
 import arrow from '../../assets/arrow.png';
 import arrowLeft from '../../assets/arrow_left.png';
 
 import { useSelector , useDispatch } from 'react-redux';
 import {setActiveId} from '../../redux/activeSlice';
-import {courseInfo} from './coursesInfo';
+import {setCurrentIndex} from '../../redux/currentIndexSlice';
+import {courseInfo , Technology  } from './coursesInfo';
 
 
 import './TrainingPlan.css';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const options = [
     {
@@ -52,6 +62,7 @@ function NavOption(props) {
     const [hover, setHover] = useState(false);
     const dispatch = useDispatch();
     function handleClick() { 
+        dispatch(setCurrentIndex(0));
         dispatch(setActiveId(props.id));
     }
 
@@ -76,7 +87,7 @@ function LowerCardElement(props){
     return (
         <div className='courseCard__lowerCard--element'>
             <div className='courseCard__lowerCard--text'>
-                {props.firstText}
+                {props.duration}
             </div>
             <div className='courseCard__lowerCard--icon-container'>
                 <img className='courseCard__lowerCard--icon' src={props.firstIcon} alt='courseIcon' />
@@ -90,25 +101,45 @@ function CourseCard(props){
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
                  <div className='courseCard__upperCard--title'>
-                   {props.title} 
+                   {props.name} 
                  </div>
                  <div className='courseCard__upperCard--text'>
-                   {props.text}
+                   {/** just 100 letters  of description */}
+                     {props.description.substring(0, 100)}...
                  </div>
             </div>
             <div className='courseCard__lowerCard'>
-               <LowerCardElement firstText={props.firstText} firstIcon={props.firstIcon} />          
-               <LowerCardElement firstText={props.secondText} firstIcon={props.secondIcon} />          
-               <LowerCardElement firstText={props.thirdText} firstIcon={props.thirdIcon} />          
+               <LowerCardElement duration={props.duration} firstIcon={props.firstIcon} />          
+               <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />          
+               <LowerCardElement duration={props.level} firstIcon={props.thirdIcon} />          
             </div>
         </div>
     );
 }
 
+function equal(fleft, fright) {
+    
+
+    // if fleft and fright intersects 
+
+    
+    if (fleft.includes(fright) || fright.includes(fleft)) {
+       
+        return true;
+    }
+
+    return false;
+}
+
+function filter(p, group, unit, level) {
+    return p.filter(course => equal(course.group, group) && equal(course.unit, unit) && equal(course.level, level))
+}
+
 function TrainingPlan() {
     const activeId = useSelector((state) => state.active.value);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(3);
+    const currentIndex = useSelector((state) => state.currentIndex.value);
+    const [itemsPerPage, setItemsPerPage] = useState(4);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const handleResize = () => {
@@ -130,16 +161,40 @@ function TrainingPlan() {
           window.removeEventListener('resize', handleResize);
         };
       }, []);
-      const components = courseInfo[activeId];
+    
+      
+
+      let components = courseInfo[activeId];
+      // if activeId = 1 for technology mak component = Technology 
+        if(activeId === 1){
+            components = Technology;
+            // filter Technology based on local storage اسم القطاع اسم المجموعة الدرجة الوظيفية
+            const sector = localStorage.getItem('اسم القطاع');
+            const group = localStorage.getItem('اسم المجموعة');
+            const degree = localStorage.getItem(' الدرجة الوظيفية');
+
+            console.log('sector: ', sector);
+            console.log('group: ', group);
+            console.log('degree: ', degree);
+
+            console.log('components: ', components.length)
+
+            components = filter(components, group, sector ,degree);
+            // filter all courses contains
+
+            console.log('components: ', components.length)
+            
+        }
+
       const IncreaseRoll = () => {
-          console.log(currentIndex);
-          console.log(components.length);
-          setCurrentIndex(index => (index + 1) % components.length);
+          const index = (currentIndex + 1) % components.length;
+          dispatch(setCurrentIndex(index));
       };
       const DecreaseRoll = () => {
-            setCurrentIndex(index => (index - 1 + components.length) % components.length);
+         const index = (currentIndex - 1 + components.length) % components.length;
+         dispatch(setCurrentIndex(index));
       };
-
+      // if currentIndex + itemsPerPage > components.length then 
       const displayedComponents = components.slice(currentIndex, currentIndex + itemsPerPage);
     
     return (
@@ -156,7 +211,7 @@ function TrainingPlan() {
                 <div className='trainingPlan__content'>
                     {/** loop over courseInfo.Governance */}
                     {displayedComponents.map((course) => (
-                        <CourseCard key={course.id} title={course.title} text={course.text} firstText={course.firstText} firstIcon={course.firstIcon} secondText={course.secondText} secondIcon={course.secondIcon} thirdText={course.thirdText} thirdIcon={course.thirdIcon} />
+                        <CourseCard key={course.id} name={course.name} description={course.description} duration={course.duration} firstIcon={courseIcon1} attendance={course.attendance} secondIcon={courseIcon2} level={course.job_category} thirdIcon={courseIcon3} />
                     ))}
                 </div>
             </div>

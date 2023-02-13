@@ -1,15 +1,26 @@
 /*space between*/
+
 .registration{
-	margin-bottom: 200px;
+	width:100%;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
+/*for small screen padding bottom*/
+@media screen and (max-width: 1500px  ) {
+	.registration{
+		
+	}
+
+}
+
 .registration__container{
-	margin-top: 15%;
 	display: flex;
 	flex-flow: row-reverse wrap;
-	justify-content: right;
+	justify-content: center;
 	align-items: center;
-	padding-right: 15%;
-	height: 75%;
+	width: 80%;	
 	
 }
 
