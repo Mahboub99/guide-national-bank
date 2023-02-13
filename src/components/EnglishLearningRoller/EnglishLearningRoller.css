@@ -142,3 +142,13 @@
     width:30px;
     z-index: 2;
 }
+
+/*hover*/
+.englishLearningRoller__textContainer--leftArrow:hover{
+    
+    transform: translateY(-50%) scale(1.1);
+}
+
+.englishLearningRoller__textContainer--rightArrow:hover{
+    transform: translateY(-50%) scale(1.1);
+}

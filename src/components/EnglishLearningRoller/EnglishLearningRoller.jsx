@@ -1,10 +1,10 @@
 // react function component 
 // import react
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import NBEButton from "../NBEButton/NBEButton";
-import labtob1 from "../../assets/labtob1.png";
-import labtob2 from "../../assets/labtob2.png";
-import labtob3 from "../../assets/labtob3.png";
+import {setEnglishLearnIndexSlice} from "../../redux/EnglishLearnIndexSlice";
 
 import leftArrow from "../../assets/left_arrow.png"; 
 import rightArrow from "../../assets/right_arrow.png";
@@ -13,14 +13,30 @@ import "./EnglishLearningRoller.css"
 
 
 function EnglishLearningRoller(props){
+    const englishLearnIndex = useSelector(state => state.englishLearnIndex.value);
+    const dispatch = useDispatch();
+
+    // increase the index of the english learning roller
+    const increaseEnglishLearnIndex = () => {
+        if(englishLearnIndex < 2){
+            dispatch(setEnglishLearnIndexSlice(englishLearnIndex + 1));
+        }
+    }
+    // decrease the index of the english learning roller
+    const decreaseEnglishLearnIndex = () => {
+        if(englishLearnIndex > 0){
+            dispatch(setEnglishLearnIndexSlice(englishLearnIndex - 1));
+        }
+    }
+
     console.log(props.text);
     return (
         <div className="englishLearningRoller">
             <div className='englishLearningRoller__textContainer' > 
                 {/** left arrow */} 
-                <img src={leftArrow} alt="leftArrow" className='englishLearningRoller__textContainer--leftArrow' />
+                {englishLearnIndex > 0 && <img src={leftArrow} alt="leftArrow" className='englishLearningRoller__textContainer--leftArrow' onClick={decreaseEnglishLearnIndex} />}
                 {/** right arrow */}
-                <img src={rightArrow} alt="rightArrow" className='englishLearningRoller__textContainer--rightArrow' />
+                {englishLearnIndex < 2 && <img src={rightArrow} alt="rightArrow" className='englishLearningRoller__textContainer--rightArrow' onClick={increaseEnglishLearnIndex} />}
 
                 <img class='englishLearningRoller__img' src={props.img} alt="labtob1" />
                 <p className='englishLearningRoller__text'>
