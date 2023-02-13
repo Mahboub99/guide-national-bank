@@ -83,7 +83,8 @@ Data Center
 
 // make every element in the array unique from previous comment and add it to the selectList array 
 
-const selectList1 = [
+const selectList1 = [  
+    'General', 
     "الدعم الإداري",
     "المنتجات و المبيعات",
     "الخدمات المصرفية الرقمية",
@@ -224,6 +225,7 @@ General
 
 // the previous comment should be an array of strings 
 const selectList2 = [
+    'General',
 	'المنتجات و المبيعات',	
     'التامين المركزي',
     'الحسابات و التعاقدات',

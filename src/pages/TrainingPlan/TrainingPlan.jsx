@@ -23,7 +23,7 @@ import arrowLeft from '../../assets/arrow_left.png';
 import { useSelector , useDispatch } from 'react-redux';
 import {setActiveId} from '../../redux/activeSlice';
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
-import {courseInfo , Technology  } from './coursesInfo';
+import {courseInfo , Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
 
 
 import './TrainingPlan.css';
@@ -101,7 +101,7 @@ function CourseCard(props){
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
                  <div className='courseCard__upperCard--title'>
-                   {props.name} 
+                   {props.name.substring(0, 50)}... 
                  </div>
                  <div className='courseCard__upperCard--text'>
                    {/** just 100 letters  of description */}
@@ -165,25 +165,26 @@ function TrainingPlan() {
       
 
       let components = courseInfo[activeId];
+      const sector = localStorage.getItem('اسم القطاع');
+      const group = localStorage.getItem('اسم المجموعة');
+      const degree = localStorage.getItem(' الدرجة الوظيفية');
+
       // if activeId = 1 for technology mak component = Technology 
-        if(activeId === 1){
-            components = Technology;
-            // filter Technology based on local storage اسم القطاع اسم المجموعة الدرجة الوظيفية
-            const sector = localStorage.getItem('اسم القطاع');
-            const group = localStorage.getItem('اسم المجموعة');
-            const degree = localStorage.getItem(' الدرجة الوظيفية');
-
-            console.log('sector: ', sector);
-            console.log('group: ', group);
-            console.log('degree: ', degree);
-
-            console.log('components: ', components.length)
-
+        if (activeId === 0){
+            components = Government;
             components = filter(components, group, sector ,degree);
-            // filter all courses contains
-
-            console.log('components: ', components.length)
-            
+        }else if(activeId === 1){
+            components = Technology;
+            components = filter(components, group, sector ,degree);
+        }else if (activeId === 2){
+            components = Future;
+            components = filter(components, group, sector ,degree);
+        }else if (activeId === 3){
+            components = Skills;
+            components = filter(components, group, sector ,degree);
+        }else if (activeId === 4){
+            components = Behavior;
+            components = filter(components, group, sector ,degree);
         }
 
       const IncreaseRoll = () => {
