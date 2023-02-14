@@ -1,7 +1,8 @@
 // write footer function component react
 import React from 'react'
 // import 25sana fro,m assets
-import leftIMage from '../../assets/25Sana.png' 
+import clickImg from '../../assets/click.png' 
+
 
 // import NBE logo from assets
 import rightIMage from '../../assets/NBA.png'

@@ -1,6 +1,7 @@
 .GuideModal__img{
-    width: 10%  ;
+    width: 25%  ;
 }
+
 
 .GuideModal__img:hover{
     cursor: pointer;
@@ -9,7 +10,7 @@
 /*for small screen make width*/
 @media screen and (max-width: 768px) {
   .GuideModal__img {
-    width: 50px;
+    width: 50%;
   }
 }
 .guideModal__container {

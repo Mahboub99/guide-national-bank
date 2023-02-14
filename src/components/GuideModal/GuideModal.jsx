@@ -7,7 +7,7 @@ import ELearning from '../ELearning/ELearning';
 import EnglishLearning from '../EnglishLearning/EnglishLearning';
 import GeneralInstructions from '../GeneralInstructions/GeneralInstructions';
 
-import leftIMage from '../../assets/25Sana.png' 
+import leftIMage from '../../assets/footerNav.png' 
 import closeImg from '../../assets/close.png' 
 import guideOptionImg1 from '../../assets/guideOptionImg1.png'
 import guideOptionImg2 from '../../assets/guideOptionImg2.png'
