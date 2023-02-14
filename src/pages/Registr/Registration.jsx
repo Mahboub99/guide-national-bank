@@ -4,41 +4,43 @@ import { Link } from 'react-router-dom';
 import NBEButton from '../../components/NBEButton/NBEButton';
 import RegistrationElement from '../../components/RegistrationElement/RegistrationElement';
 import { useSelector} from 'react-redux';
-import { groups ,units ,levels } from './selectors';
+import { groups ,units ,levels ,departments } from './selectors';
 
 import './Registration.css';
 
 
-const registrationElements = [
-	{
-		number: '١',
-		defaultText: 'اسم المجموعة',
-		text: 'برجاء إختيار المجموعة',
-		selectList: groups,
-		nextChoice: 'sector'
-	},
-	{
-		number: '٢',
-		defaultText: 'اسم القطاع',
-		text: 'برجاء إختيار القطاع',
-		selectList: units,
-		nextChoice: 'jobLevel'
-	},
-	{
-		number: '٣',
-		defaultText: ' الدرجة الوظيفية',
-		text: 'برجاء إختيار الدرجة الوظيفية',
-		selectList: levels,
-		nextChoice: 'jobLevel'
-	}
-];
 
 
 
 function Registration() {
 	
 	const register = useSelector((state) => state.register);
-	
+    const group = localStorage.getItem('اسم المجموعة');
+
+    
+    const registrationElements = [
+        {
+            number: '١',
+            defaultText: 'اسم المجموعة',
+            text: 'برجاء إختيار المجموعة',
+            selectList: groups,
+            nextChoice: 'sector'
+        },
+        {
+            number: '٢',
+            defaultText: 'اسم القطاع',
+            text: 'برجاء إختيار القطاع',
+            selectList: departments[group],//departments[groupName.value.value],
+            nextChoice: 'jobLevel'
+        },
+        {
+            number: '٣',
+            defaultText: ' الدرجة الوظيفية',
+            text: 'برجاء إختيار الدرجة الوظيفية',
+            selectList: levels,
+            nextChoice: 'jobLevel'
+        }
+    ];
 	return (
 		<div className="registration">
 			<div className="registration__container">
