@@ -13,9 +13,7 @@ import completed5 from '../../assets/completed5.png';
 import courseIcon1 from '../../assets/courseIcon1.png';
 import courseIcon2 from '../../assets/courseIcon2.png';
 import courseIcon3 from '../../assets/courseIcon3.png';
-import courseIcon4 from '../../assets/courseIcon4.png';
-import courseIcon5 from '../../assets/courseIcon5.png';
-import courseIcon6 from '../../assets/courseIcon6.png';
+
 
 import arrow from '../../assets/arrow.png';
 import arrowLeft from '../../assets/arrow_left.png';
@@ -27,7 +25,6 @@ import {courseInfo , Technology, Future ,Skills ,Government ,Behavior  } from '.
 
 
 import './TrainingPlan.css';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const options = [
     {

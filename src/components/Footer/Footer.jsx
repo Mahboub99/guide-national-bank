@@ -1,7 +1,5 @@
 // write footer function component react
 import React from 'react'
-// import 25sana fro,m assets
-import clickImg from '../../assets/click.png' 
 
 
 // import NBE logo from assets
