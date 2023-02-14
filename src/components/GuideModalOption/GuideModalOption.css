@@ -28,8 +28,10 @@
   padding: 20px;
   border: 1px solid #888;
   width: 60%;
-  height: 600px;
-  border-radius: 28px;    
+  height: auto;
+  border-radius: 28px; 
+  padding-bottom: 40px;
+
 }
 /*for small  screen make width 90%*/
 @media screen and (max-width: 600px) {
