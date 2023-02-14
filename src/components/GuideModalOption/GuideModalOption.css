@@ -93,8 +93,18 @@
   width: 75%;
   font-size: 20px;
 }
+
 .guideModalOption__container--option--imgContainer{
   width: 25%;
   text-align: left;
   margin-left: 10%;
+}
+/*for small  screen */
+@media screen and (max-width: 1200px) {
+  .guideModalOption__container--option--textContainer {
+    font-size: 14px;
+  }
+  .guideModalOption__container--option--img{
+    width: 30px;
+  }
 }

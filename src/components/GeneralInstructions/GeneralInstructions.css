@@ -4,4 +4,113 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    height: 100%;
+}
+.generalInstructionsContainer{
+    margin-right: 15px;
+    width: 95%;
+    height: 100%;
+    position: relative;
+
+}
+
+.generalInstructionsContainer__title{
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    color: #F49E3B;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.generalInstructionsContainer__outerContainer{
+    width: 100%;
+    height: 80%;
+    border: 3px solid #F49E3B;
+    margin-top: 50px;
+    border-radius: 28px;
+    padding: 0.5%;
+    position: relative;
+}
+
+.generalInstructionsContainer__innerContainer{
+    width: 100%;
+    height: 100%;
+    background-color:#00643E;
+    border-radius: 24px;
+    text-align: center;
+    padding: 5%;
+}
+ul.generalInstructionsContainer__list{
+    list-style-type: disc; 
+}
+.generalInstructionsContainer__list{
+   margin-top: 5%;
+    margin: auto ;
+    width: 90%;
+    text-align: right;
+    color: white;
+    font-size: 16px;
+    
+}
+
+.generalInstructionsContainer__listItem{
+    padding-bottom: 20px;
+}
+
+/*style the disc of the li element to be orange*/
+.generalInstructionsContainer__listItem::marker{
+    color: #F49E3B;
+}
+
+.generalInstructionsContainer__outerContainer--leftArrow{
+    position: absolute;
+    top: 50%;
+    left:-16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width:22px;
+    height: 40px;
+    z-index: 2;
+}
+.generalInstructionsContainer__outerContainer--rightArrow{
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width:22px;
+    height: 40px;
+    z-index: 2;
+}
+/*hover arrows*/
+.generalInstructionsContainer__outerContainer--leftArrow:hover{
+    transform: translateY(-50%) scale(1.1);
+    transition: 0.3s;
+}
+.generalInstructionsContainer__outerContainer--rightArrow:hover{
+    transform: translateY(-50%) scale(1.1);
+    transition: 0.3s;
+}
+@media screen and (max-width: 1400px) {
+    .generalInstructionsContainer__title{
+        font-size: 15px;
+    }
+    .generalInstructionsContainer__list{
+        font-size: 10px;
+    }
+    .generalInstructionsContainer__outerContainer{
+        height: auto;
+    }
+    .generalInstructionsContainer__outerContainer--leftArrow{
+        width: 15px;
+        height: 30px;
+    }
+    .generalInstructionsContainer__outerContainer--rightArrow{
+        width: 15px;
+        height: 30px;
+    }
 }
