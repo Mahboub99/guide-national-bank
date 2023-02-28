@@ -1,5 +1,6 @@
 // TrainingPlan  function component 
 import React, { useState, useEffect } from 'react';
+import Pdf from "react-to-pdf";
 import { Link } from 'react-router-dom';
 import NBEButton from '../../components/NBEButton/NBEButton';
 
@@ -21,10 +22,10 @@ import arrowLeft from '../../assets/arrow_left.png';
 import { useSelector , useDispatch } from 'react-redux';
 import {setActiveId} from '../../redux/activeSlice';
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
-import {courseInfo , Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
-
+import {Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
 
 import './TrainingPlan.css';
+
 
 const options = [
     {
@@ -161,7 +162,7 @@ function TrainingPlan() {
     
       
 
-      let components = courseInfo[activeId];
+      let components = [];
       const sector = localStorage.getItem('اسم القطاع');
       const group = localStorage.getItem('اسم المجموعة');
       const degree = localStorage.getItem(' الدرجة الوظيفية');
@@ -196,7 +197,7 @@ function TrainingPlan() {
       const displayedComponents = components.slice(currentIndex, currentIndex + itemsPerPage);
     
     return (
-        <div className="trainingPlan">
+        <div className="trainingPlan" >
             <div className='trainingPlan__container'>
                 <img src={arrow} alt='arrow' className='trainingPlan__arrow--right' onClick={IncreaseRoll} />
                 <img src={arrowLeft} alt='arrow' className='trainingPlan__arrow--left' onClick={DecreaseRoll} />
@@ -213,7 +214,7 @@ function TrainingPlan() {
                     ))}
                 </div>
             </div>
-            <div className='trainingPlan__buttons'>
+            <div className='trainingPlan__buttons' >
                 <Link to="/registerCompleted" className='trainingPlan__Link' >
                     <NBEButton text="الرجوع" marginBottom ="0" />
                 </Link>

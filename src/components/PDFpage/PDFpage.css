@@ -1,0 +1,43 @@
+.PDFpage{
+    margin-top: 400%;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.PDFpage__container{
+    padding: 50px;
+    width: 80%;
+    background-color: #00643E;
+    text-align: center;
+    position: relative; 
+}
+
+.navOption__pdf{
+    background-color: #F49E3B;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height:100px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+}
+.PDFpage__courses{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.PDFpage__card--hight{
+    height: 400px;
+}
