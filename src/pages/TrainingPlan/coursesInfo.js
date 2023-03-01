@@ -330,7 +330,6 @@ export const courseInfo = [
     ]
 ];
 
-
 export const Technology = [
     {
       name: "Digital transformation in financial services (Specialization)",

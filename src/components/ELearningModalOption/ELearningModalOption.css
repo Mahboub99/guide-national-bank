@@ -27,7 +27,7 @@
     margin: auto;
     border: 1px solid #888;
     width: 60%;
-    height: 600px;
+    height: auto;
     border-radius: 28px;    
   }
   /*for small  screen make width 90%*/

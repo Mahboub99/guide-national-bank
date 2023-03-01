@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRegister } from '../../redux/registerSlice'; 
+import { setGroupName } from '../../redux/groupNameSlice';
 
 
 import './SelectMenu.css';
@@ -9,15 +10,16 @@ function SelectMenu(props) {
   const [isOpen, setOpen] = useState(false);
   const [selected, setSelected] = useState(props.defaultText);
   const toggleDropdown = () => setOpen(!isOpen);
+  const dispatch = useDispatch();
   const selectOption = (option) => {
     // save the selected option in the local storage with the name of defaultText
     localStorage.setItem(props.defaultText, option);
     setSelected(option);
     dispatch(setRegister({value: props.nextChoice}));
+    dispatch(setGroupName({value: option}));
+
     setOpen(false);
   };
-  const  register = useSelector((state) => state.register.value);
-  const dispatch = useDispatch();
 
   return (
     <div className={`select_wrap ${isOpen ? 'active' : ''}`}>

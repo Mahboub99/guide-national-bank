@@ -16,7 +16,7 @@ function ELearningLinkedIn() {
                     هذه المسارات متاحة فقط للعاملين الجدد (مصرفي ب - مصرفي أ) وبحد
                     أقصي ثلاث سنوات من سنة التعيين
                 </p>
-                <p className='eLearningOptionPage__text--orange'>وتم ارسال رابط التفعيل للحضور المستهدف</p>
+                <p className='eLearningOptionPage__text--orange eLearningOptionPage--margin-50'>وتم ارسال رابط التفعيل للحضور المستهدف</p>
             </div>
     )
 }

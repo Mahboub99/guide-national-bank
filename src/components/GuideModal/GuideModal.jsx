@@ -6,9 +6,8 @@ import GuideModalOption from '../GuideModalOption/GuideModalOption';
 import ELearning from '../ELearning/ELearning';
 import EnglishLearning from '../EnglishLearning/EnglishLearning';
 import GeneralInstructions from '../GeneralInstructions/GeneralInstructions';
-import AskHumanResources from '../AskHumanResources/AskHumanResources';
 
-import leftIMage from '../../assets/25Sana.png' 
+import leftIMage from '../../assets/footerNav.png' 
 import closeImg from '../../assets/close.png' 
 import guideOptionImg1 from '../../assets/guideOptionImg1.png'
 import guideOptionImg2 from '../../assets/guideOptionImg2.png'
@@ -33,13 +32,24 @@ const options = [
     text: 'ضوابط عامة',
     icon: guideOptionImg3,
     component: <GeneralInstructions />
-  },
-  {
-    text: 'أسال الموارد البشرية',
-    icon: guideOptionImg4,
-    component: <AskHumanResources />
   }
 ];
+
+
+function OptionElement(props){
+  return (
+    <div className='guideModalOption__container--option' onClick={props.onClick} >
+      
+      <div className='guideModalOption__container--option--imgContainer'>
+        <img className='guideModalOption__container--option--img' src={props.icon} alt="guideOptionImg1" />
+      </div>
+      <div className='guideModalOption__container--option--textContainer'>
+        <p>{[props.text]}</p>  
+      </div>
+    </div>
+  )
+}
+
 
 function GuideModal() {
   // State to control the visibility of the outer modal
@@ -64,6 +74,8 @@ function GuideModal() {
             {options.map((option, index) => (
               <GuideModalOption key={index} optionElement={option.component} icon={option.icon} text={option.text} />
             ))}
+            
+            <OptionElement icon={guideOptionImg4} text={'أسال الموارد البشرية'} onClick={() => window.open('https://www.google.com', '_blank')} />
           </div>  
         </div>
       )}
