@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./html2pdf.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <p id="toPdf">
+            kjsdioashdfioasdcsa
+            ccskahdfoksahgfciosahfcsda
+            fcjasdopfhdsopihfiodsuhfgiosdhgyierwuytgojdkfcvhioefghdsfvnhcsd
+            sdjfgopsdhjfgoidhsgiodfpgbvsdf
+            gvksdghj
+            sdfpogj
+            sdgsdfg'dskfghsdfhgio'sdjfgopsdhjfgoidhsgiodfpgbvsdfdwsgjsd
+            gvksdghjsdhgsdhgsd
+        </p>
+        <button id="btn" >Download</button>
+            <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            const element = document.getElementById('toPdf');
+            const opt = {
+                margin: 1,
+                filename: 'myfile.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(element).set(opt).save();
+        });
+    </script>
+    </div>
+</body>
+</html>
