@@ -1,10 +1,6 @@
 // PDFpage component function 
 
 import React, { Component } from 'react';
-import ReactPDF from '@react-pdf/renderer';
-
-import Pdf from "react-to-pdf";
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 import NBEButton from '../../components/NBEButton/NBEButton';
 import completed1 from '../../assets/completed3.png';
@@ -15,24 +11,33 @@ import completed5 from '../../assets/completed5.png';
 
 import courseIcon1 from '../../assets/courseIcon1.png';
 import courseIcon2 from '../../assets/courseIcon2.png';
-import courseIcon3 from '../../assets/courseIcon3.png';
+import courseIcon3 from '../../assets/courseIcon4.png';
 
 
 import {Technology, Future ,Skills ,Government ,Behavior  } from '../../pages/TrainingPlan/coursesInfo';
+import { html2pdf } from 'html2pdf.js';
+import { print , Preview  } from 'react-html2pdf';
+
+// import {html2pdf} from './htmlTopdf/html2pdf.bundle.js';
 
 import './PDFpage.css';
 
 const ref = React.createRef();
 
 
-function NavOption(props) {
+
+function SectorTitle(props) {
     return (
-        <div className='navOption__pdf'>
-            <img className='navOption__img' src={props.icon} alt={props.text} />
-            <p className='navOption__text'>{props.text}</p>
+        <div className='sectorTitle__pdf'>
+            <div className='sectorTitle__pdfImageContainer'>
+                <img className='sectorTitle__pdf--img' src={props.icon} alt={props.text} />
+            </div>
+            <p className='sectorTitle__text'>{props.text}</p>
         </div>
     );
 }
+
+
 function equal(fleft, fright) {
     
     if (fleft.includes(fright) || fright.includes(fleft)) {
@@ -89,27 +94,14 @@ const courses = [
 ]    
 
 
-// Create Document Component
-const MyDocument = () => (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
-        </View>
-      </Page>
-    </Document>
-  );
 function LowerCardElement(props){
     return (
-        <div className='courseCard__lowerCard--element'>
-            <div className='courseCard__lowerCard--text'>
+        <div className='courseCardPdf__lowerCard--element'>
+            <div className='courseCardPdf__lowerCard--text'>
                 {props.duration}
             </div>
-            <div className='courseCard__lowerCard--icon-container'>
-                <img className='courseCard__lowerCard--icon' src={props.firstIcon} alt='courseIcon' />
+            <div className='courseCardPdf__lowerCard--icon-container'>
+                <img className='courseCardPdf__lowerCard--icon' src={props.firstIcon} alt='courseIcon' />
             </div>
         </div>
     );
@@ -117,17 +109,17 @@ function LowerCardElement(props){
 
 function CourseCard(props){
     return (
-        <div className='courseCard PDFpage__card--hight' >
-            <div className='courseCard__upperCard'>
-                 <div className='courseCard__upperCard--title'>
+        <div className='courseCardPdf' >
+            <div className='courseCardPdf__upperCard'>
+                 <div className='courseCardPdf__upperCard--title'>
                    {props.name} 
                  </div>
-                 <div className='courseCard__upperCard--text'>
+                 <div className='courseCardPdf__upperCard--text'>
                    {/** just 100 letters  of description */}
                      {props.description}
                  </div>
             </div>
-            <div className='courseCard__lowerCard'>
+            <div className='courseCardPdf__lowerCard'>
                <LowerCardElement duration={props.duration} firstIcon={props.firstIcon} />          
                <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />          
                <LowerCardElement duration={props.level} firstIcon={props.thirdIcon} />          
@@ -136,38 +128,43 @@ function CourseCard(props){
     );
 }
 
+function SectorElement(props){
+    return (
+        <div>
+            <h1>الخطة التدريبية</h1>
+            <h1>للعاملين بالبنك الاهلي المصري</h1>
+            <div className='PDFpage__container'  > 
+                    <SectorTitle  text={props.optionElement.text}   icon={props.optionElement.icon} />
+                <div className='PDFpage__courses'>
+                        {props.coursesElement.map((course) => (
+                            <CourseCard key={course.id} name={course.name} description={course.description} duration={course.duration} firstIcon={courseIcon1} attendance={course.attendance} secondIcon={courseIcon2} level={course.job_category} thirdIcon={courseIcon3} />
+                        ))}
+                </div> 
+            </div>
+        </div>
 
+    );
+}
 
 // ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 function PDFpage(props) {
     return (
-        <div className='PDFpage'>
-            {/* <Pdf targetRef={ref} filename="code-example.pdf">
-                {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
-            </Pdf>
-            <div className='PDFpage__container' ref={ref} > 
-                <NavOption  text={options[0].text}   icon={options[0].icon} />
-               <div className='PDFpage__courses'>
-                    {courses[0].map((course) => (
-                        <CourseCard key={course.id} name={course.name} description={course.description} duration={course.duration} firstIcon={courseIcon1} attendance={course.attendance} secondIcon={courseIcon2} level={course.job_category} thirdIcon={courseIcon3} />
-                    ))}
-               </div> 
-            </div> */}
+        <div>
+            <div className='PDFpage'>
+                <div className='PDFpage__coursesWarper'>
+                    <Preview id={'toPdf'} >
+                        <SectorElement optionElement={options[0]} coursesElement={courses[0]}/>
+                        <SectorElement optionElement={options[1]} coursesElement={courses[1]}/>
+                        <SectorElement optionElement={options[2]} coursesElement={courses[2]}/>
+                        <SectorElement optionElement={options[3]} coursesElement={courses[3]}/>
+                        <SectorElement optionElement={options[4]} coursesElement={courses[4]}/>
+                    </Preview>
+                </div>
+            </div>
+            <NBEButton  text="تحميل الخطة" marginBottom ="0" onClick={()=>print('الخطة التدريبية للعاملين بالبك الاهلي المصري', 'toPdf')} />
         </div>
     );
 }
 
+export default PDFpage;
 
-
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4'
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1
-  }
-});

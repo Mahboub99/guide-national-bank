@@ -228,7 +228,10 @@ function TrainingPlan() {
                 <Link to="/registration" className='trainingPlan__Link' >
                     <NBEButton text="الرجوع" marginBottom ="0" onClick={clearSelectors} />
                 </Link>
-                <NBEButton text="تحميل الخطة" marginBottom ="0" />
+                <Link to="/pdf">
+                    <NBEButton text="تحميل الخطة" marginBottom ="0" />
+                </Link>
+                
             </div>
         </div>
     );
