@@ -9,12 +9,25 @@ function ELearning9Edara() {
                 كتب وملخصات <span className='eLearningOptionPage__text--orange' > مقروءة ومسموعة</span> في مختلف المجالات الإدارية باللغة العربية   
             </p>
             <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50'>
-                خطوات الدخول علي منصة com.Edara
-                الدخول من خلال <span className='eLearningOptionPage__text--orange' > تطبيق Staff NBE </span> و اتباع الخطوات المذكورة
-                تحميل تطبيق <span className='eLearningOptionPage__text--orange' >  منصة com.edara</span>
-                الكود المؤسسي : NBE
-                اسم المستخدم : رقم الموظف الخارجي
-                كلمة المرور : edara123
+                <p>edara.com خطوات الدخول علي منصة  </p>
+                <p>  
+                    <span className='eLearningOptionPage__text--orange' > تطبيق Staff NBE </span>  
+                    الدخول من خلال 
+                </p>
+                <span> 
+                    و اتباع الخطوات المذكورة
+                </span>
+                <p>
+                    <a className='eLearningOptionPage__text--orange' href='https://edara.com/ '>
+                        <span className='eLearningOptionPage__text--orange' >  edara.com منصة 
+                            <span className='eLearning--hide'>a</span> 
+                        </span> 
+                    </a>
+                    تحميل تطبيق 
+                </p>
+                <p>  NBE : الكود المؤسسي</p>
+                <p>اسم المستخدم : رقم الموظف الخارجي</p>
+                <p>edara123 : كلمة المرور  </p>
             </p>
         </div>
     )

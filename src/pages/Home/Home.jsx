@@ -25,7 +25,7 @@ function Home() {
 				</div>
 			</div>
 			<Link to="/introduction" className="home__link">
-				<NBEButton text="ابدأ" marginBottom="0px" />
+				<NBEButton text="ابدأ" marginBottom="0px" width="150px"/>
 			</Link>
 		</div>
 	);

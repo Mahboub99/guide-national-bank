@@ -21,7 +21,7 @@ const options = [
         ]
     },
     {
-        title: 'قواعد ومحددات الاعتذارات / التعديلات / التبديلات',
+        title: 'قواعد ومحددات الاعتذارات / التعديلات / التبديلات ',
         text: [
             'يجب الالتزام بالموعد المسموح به لطلب الاعتذار / التعديل / التبديل والوارد بإعلان الخطة التدريبية السنوية.',
             'يجب الرجوع لجهاز المنطقة / الشئون الإدارية للقطاع لتقديم طلب الاعتذار / التعديل / التبديل وذلك لإخطار قطاع المعرفة والتطوير بصورة مجمعة لطلبات الاعتذار / التعديل / التبديل حيث لا يعتد بالطلبات الفردية التي ترد لقطاع المعرفة والتطوير.',
@@ -116,7 +116,20 @@ function GeneralInstructionsContainer() {
                         })}
                     </ul>
                 </div>
+
            </div>
+            {/*make the active dot orange*/}
+            <div className="generalInstructions__dotsContainer">
+                {options.map((item, index) => {
+                    return <div key={index} className={generalInstructionsIndex === index ? "generalInstructions__dotsContainer--dot generalInstructions__dotsContainer--dot-active" : "generalInstructions__dotsContainer--dot"}></div>
+                })}
+            </div>
+
+           {/* <div className="generalInstructions__dotsContainer">
+                {options.map((item, index) => {
+                    return <div key={index} className="generalInstructions__dotsContainer--dot"></div>
+                })}
+            </div> */}
         </div>
     )   
 }

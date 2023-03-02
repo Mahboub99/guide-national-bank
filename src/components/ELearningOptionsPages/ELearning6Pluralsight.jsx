@@ -15,8 +15,12 @@ function ELearning6Pluralsight() {
                 ستكون المنصة متاحة لعدد محدود من العاملين
                 وفقا وأولوية التسجيل واستيفاء موافقة المدير
                 المباشر والمستوى الإداري الأعلى على نظام الاوراكل
-                من خلال <span className='eLearningOptionPage__text--orange' >  الرابط التالي: Registration Pluralsight</span>
-                @سيتم ارسال تعليمات و طريقة الدخول للزملاء
+                من خلال 
+                
+                <a className='eLearningOptionPage__text--orange' href='https://www.pluralsight.com/ '>
+                    <p className='eLearningOptionPage__text--orange' >  Registration Pluralsight :الرابط التالي</p>
+                </a>
+                سيتم ارسال تعليمات و طريقة الدخول للزملاء
                 المسجلين تباعا
             </p>
         </div>

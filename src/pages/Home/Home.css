@@ -6,9 +6,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width:100%;
 	height: 80%;
 }
 .home__left {
+	margin-right: 10%;
 	width: 50%;
 	justify-content: center;
 }
@@ -26,7 +28,7 @@
 	
 }
 .home__right--image{
-	width:100%;
+	width:150%;
 }
 .home__left--text{
 	width: 100%;

@@ -41,6 +41,7 @@ HAVE THE SAME HEIGHT
     height: auto;
     border-radius: 70px;
     
+    
 }
 
 .eLearningMainImg{
@@ -48,4 +49,17 @@ HAVE THE SAME HEIGHT
     width: 100%;
     margin-top: 3%;
     margin-left: 3%;
+}
+
+.eLearning__clickText{
+  text-align: left;
+  margin-left: 20px;
+  color: #F49E3B;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.eLearning--hide{
+    /*hidden*/
+     visibility: hidden;
 }

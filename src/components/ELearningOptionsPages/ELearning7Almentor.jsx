@@ -10,11 +10,16 @@ function ELearning7Almentor() {
                 و كتب</span> في لمجموعة متميزة من المدربين و أصحاب الخبرة
             </p>
             <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50'>
-                خطوات الدخول علي منصة net.Almentor
-                الدخول من خلال <span className='eLearningOptionPage__text--orange' > تطبيق Staff NBE</span> و اتباع الخطوات المذكورة
-                او الدخول علي <span className='eLearningOptionPage__text--orange' > رابط المنصة net.almentor.Nbe</span>
-                اسم المستخدم : رقم الموظف الخارجي
-                كلمة السر : Almentor
+                <p>net.Almentor خطوات الدخول علي منصة </p>
+                 و اتباع الخطوات المذكورة
+                <span className='eLearningOptionPage__text--orange' > Staff NBE تطبيق <span className='eLearning--hide'>p</span> </span>
+                الدخول من خلال 
+                <p> او الدخول علي </p> 
+                <a className='eLearningOptionPage__text--orange' href='http://account.almentor.net/ '>
+                    <p className='eLearningOptionPage__text--orange' >  net.almentor.Nbe :رابط المنصة</p>
+                </a>
+                <p>اسم المستخدم : رقم الموظف الخارجي</p>
+                <p>كلمة السر : Almentor</p>
             </p>
         </div>
     )

@@ -31,58 +31,59 @@ import './ELearning.css';
 // array of objects of 2 elements text and component
 const options = [
     {
-        text: 'LinkedIn',
-        component: <ELearningOptionPage img={PhoneImg1}  textComponent={<ELearning1LinkedIn/>} />
-    },
-    {
-        text: 'Harvard BR',
-        component: <ELearningOptionPage img={PhoneImg2} textComponent={<ELearning2Harvard/>} />
-    },
-    {
-        text: 'Coursera',
-        component: <ELearningOptionPage img={PhoneImg3} textComponent={<ELearning3Coursera/>} />
-    },
-    {
         text: "Moody's",
         component: <ELearningOptionPage img={PhoneImg4} textComponent={<ELearning4Moody/>} />
     },
     {
-        text: 'VidoeArts',
-        component: <ELearningOptionPage img={PhoneImg5} textComponent={<ELearning5VideoArts/>} />
-    },
-    {
-        text: 'Pluralsight',
-        component: <ELearningOptionPage img={PhoneImg6} textComponent={<ELearning6Pluralsight/>} />
+        text: 'LinkedIn',
+        component: <ELearningOptionPage img={PhoneImg1}  textComponent={<ELearning1LinkedIn/>} />
     },
     {
         text: 'Almentor',
         component: <ELearningOptionPage img={PhoneImg7} textComponent={<ELearning7Almentor/>} />
     },
     {
-        text: 'EKB',
-        component: <ELearningOptionPage img={PhoneImg8} textComponent={<ELearning8EKB/>} />
+        text: 'Coursera',
+        component: <ELearningOptionPage img={PhoneImg3} textComponent={<ELearning3Coursera/>} />
+    },
+    {
+        text: 'Pluralsight',
+        component: <ELearningOptionPage img={PhoneImg6} textComponent={<ELearning6Pluralsight/>} />
+    },
+    {
+        text: 'VidoeArts',
+        component: <ELearningOptionPage img={PhoneImg5} textComponent={<ELearning5VideoArts/>} />
     },
     {
         text: 'Edara.com',
         component: <ELearningOptionPage img={PhoneImg9} textComponent={<ELearning9Edara/>} />
-    }
+    },
+    {
+        text: 'Harvard BR',
+        component: <ELearningOptionPage img={PhoneImg2} textComponent={<ELearning2Harvard/>} />
+    },
+    {
+        text: 'EKB',
+        component: <ELearningOptionPage img={PhoneImg8} textComponent={<ELearning8EKB/>} />
+    },
 ];
 
 function ELearning() {
     return (
-        <div className='eLearning'>
-            <div className='eLearning__options'>
-                {options.map((option, index) => (
-                    <ELearningModalOption key={index} text={option.text} component={option.component} />
-                ))}
-            </div>
-            <div className='eLearning__img'>
-                <div className='eLearningMainImg__container'>
-                    <img className='eLearningMainImg' src={eLearningMainImg} alt="eLearningMainImg" />
+        <div>
+            <div className='eLearning'>
+                <div className='eLearning__options'>
+                    {options.map((option, index) => (
+                        <ELearningModalOption key={index} text={option.text} component={option.component} />
+                        ))}
                 </div>
+                <div className='eLearning__img'>
+                    <div className='eLearningMainImg__container'>
+                        <img className='eLearningMainImg' src={eLearningMainImg} alt="eLearningMainImg" />
+                    </div>
+                </div>   
             </div>
-        
-            
+            <p className='eLearning__clickText'>قم بالضغط على كل منصة لمعرفة المزيد من التفاصيل</p>
         </div>
     );
 }

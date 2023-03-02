@@ -9,10 +9,11 @@
 		cursor: pointer;
 		padding: 12px 50px;
 		border-radius: 14px;
-	  font-family: 'Tajawal', sans-serif;
+	    font-family: 'Tajawal', sans-serif;
 		font-size: 16px;
 		font-weight: 700;
 		z-index: 2;
+
 		
 }
 .nbeButton:hover{

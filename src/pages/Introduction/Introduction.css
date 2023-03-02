@@ -1,8 +1,8 @@
 .introduction{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 
 }
 .introduction__text{
@@ -10,12 +10,24 @@
 	font-size: 20px;
 	color:white;
 	display: block;
-	text-align: left;
+	text-align: center;
 	margin-left: 15px;
+	margin-bottom: 10px;
 }
+.introduction__text--sign{
+	font-family: 'Tajawal', sans-serif;
+	font-size: 20px;
+	color:white;
+	margin-bottom: 20px;
+	display: block;
+	text-align: center;
+	font-weight: 700;
+
+}
+
 .introduction__container{
 	background-color: #00643E;
-	width:40%;
+	width:30%;
 	border-radius:28px; 
 	padding: 20px 20px 0px;
 }

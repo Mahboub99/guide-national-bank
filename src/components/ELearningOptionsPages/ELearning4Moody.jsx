@@ -16,6 +16,10 @@ function ELearning4Moody() {
             </p>
             <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50'>
             </p>
+            <p></p>
+            <a className='eLearningOptionPage__text--orange' href='https://erpprodapp.nbe.ahly.bank/OA_HTML/RF.jsp?function_id=22702&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=o836UiMo-aDri5pxma2D8w..&params=U9lPYYmabOT61tYQUmOOPLhqGquWdzJvZIcDmD9wc5pOpz74Zp-8WibSthQ280tD2l.2fb8swesWQ.WTNl38nw  '>
+                    <p className='eLearningOptionPage__text--orange'> Moody's :الرابط </p>
+            </a>
         </div>
     )
 }

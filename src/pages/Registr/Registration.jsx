@@ -38,7 +38,7 @@ function Registration() {
             defaultText: ' الدرجة الوظيفية',
             text: 'برجاء إختيار الدرجة الوظيفية',
             selectList: levels,
-            nextChoice: 'jobLevel'
+            nextChoice: 'end'
         }
     ];
 	return (
@@ -55,7 +55,7 @@ function Registration() {
 				/>
 
 				{/* render the sector RegistrationElement when the register state = sector or jobLevel*/}
-				{register.value.value === 'sector' || register.value.value === 'jobLevel' ? (
+				{register.value.value === 'sector' || register.value.value === 'jobLevel' || register.value.value === 'end' ? (
 					<RegistrationElement
 						defaultText={registrationElements[1].defaultText}
 						number={registrationElements[1].number}
@@ -66,7 +66,7 @@ function Registration() {
 				) : null}
 
 				{/* render the job level RegistrationElement when the register state = jobLevel */}
-				{register.value.value === 'jobLevel' ? (
+				{register.value.value === 'jobLevel' || register.value.value === 'end'  ? (
 					<RegistrationElement
 						defaultText={registrationElements[2].defaultText}
 						number={registrationElements[2].number}
@@ -80,7 +80,7 @@ function Registration() {
 		
 			</div>
             <Link to="/registerCompleted" className="registration__link">
-                <NBEButton text="تسجيل" marginBottom ="-100p" />
+                {register.value.value === 'end' ?(<NBEButton text="عرض المسار التدريبي" marginBottom ="-100p"  />):null}
             </Link>
 		</div>
 	);

@@ -21,6 +21,9 @@ import arrowLeft from '../../assets/arrow_left.png';
 
 import { useSelector , useDispatch } from 'react-redux';
 import {setActiveId} from '../../redux/activeSlice';
+import { setRegister } from '../../redux/registerSlice'; 
+
+
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
 import {Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
 
@@ -185,17 +188,24 @@ function TrainingPlan() {
             components = filter(components, group, sector ,degree);
         }
 
-      const IncreaseRoll = () => {
-          const index = (currentIndex + 1) % components.length;
-          dispatch(setCurrentIndex(index));
-      };
-      const DecreaseRoll = () => {
-         const index = (currentIndex - 1 + components.length) % components.length;
-         dispatch(setCurrentIndex(index));
-      };
-      // if currentIndex + itemsPerPage > components.length then 
-      const displayedComponents = components.slice(currentIndex, currentIndex + itemsPerPage);
-    
+        const IncreaseRoll = () => {
+            const index = (currentIndex + 1) % components.length;
+            dispatch(setCurrentIndex(index));
+        };
+        const DecreaseRoll = () => {
+            const index = (currentIndex - 1 + components.length) % components.length;
+            dispatch(setCurrentIndex(index));
+        };
+        // if currentIndex + itemsPerPage > components.length then 
+        const displayedComponents = components.slice(currentIndex, currentIndex + itemsPerPage);
+
+      //clearSelectors :  make the setRegister value the defulte value and clear local storage items  sector group ans jobLevel 
+        const clearSelectors = () => {
+            localStorage.removeItem('اسم القطاع');
+            localStorage.removeItem('اسم المجموعة');
+            localStorage.removeItem(' الدرجة الوظيفية');
+            dispatch(setRegister({value:'group'}));
+        }
     return (
         <div className="trainingPlan" >
             <div className='trainingPlan__container'>
@@ -215,8 +225,8 @@ function TrainingPlan() {
                 </div>
             </div>
             <div className='trainingPlan__buttons' >
-                <Link to="/registerCompleted" className='trainingPlan__Link' >
-                    <NBEButton text="الرجوع" marginBottom ="0" />
+                <Link to="/registration" className='trainingPlan__Link' >
+                    <NBEButton text="الرجوع" marginBottom ="0" onClick={clearSelectors} />
                 </Link>
                 <NBEButton text="تحميل الخطة" marginBottom ="0" />
             </div>

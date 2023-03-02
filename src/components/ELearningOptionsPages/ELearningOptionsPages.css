@@ -16,11 +16,14 @@
 .eLearningOptionPage__img{
     width: 50%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .eLearningOptionPage__img--phone{
-    width: 45%;
+    width: 150%;
     /*rotate imge anit clock wise*/
-    transform: rotate(-10deg);
+    /* transform: rotate(-10deg); */
     margin: auto;
 }
 .eLearningOptionPage__text{
@@ -50,6 +53,12 @@
 
 .eLearningOptionPage__text--orange{
     color: #F49E3B;
+    text-decoration: none;
+}
+/*darker orange*/
+a .eLearningOptionPage__text--orange:hover{
+    color : #d6a46c;
+    text-decoration: underline;
 }
 
 .eLearningOptionPage--margin-50{

@@ -75,7 +75,7 @@ function GuideModal() {
               <GuideModalOption key={index} optionElement={option.component} icon={option.icon} text={option.text} />
             ))}
             
-            <OptionElement icon={guideOptionImg4} text={'أسال الموارد البشرية'} onClick={() => window.open('https://www.google.com', '_blank')} />
+            <OptionElement icon={guideOptionImg4} text={'أسال الموارد البشرية'} onClick={() => window.open('https://erpprodapp.nbe.ahly.bank/OA_HTML/RF.jsp?function_id=58839&resp_id=54511&resp_appl_id=20003&security_group_id=0&lang_code=US&oas=3qK7onxBYZLGfXfK48-HSg..&params=K-xkr2e9llnvvFYS3ovQLJYaT-jJgNEerbgvch1BfGY ', '_blank')} />
           </div>  
         </div>
       )}

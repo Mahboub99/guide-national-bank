@@ -6,7 +6,7 @@ function NBEButton(props) {
 	return (
 		<button
 			className="nbeButton"
-			style={{ marginBottom: props.marginBottom.length > 0 ? props.marginBottom : '0' }}
+			style={{ marginBottom: props.marginBottom.length > 0 ? props.marginBottom : '0', width: props.width }}
 			onClick={props.onClick}
 		>
 			{props.text}

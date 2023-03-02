@@ -12,7 +12,6 @@ import Registration from './pages/Registr/Registration';
 import RegisterCompleted from './pages/RegisterCompleted/RegisterCompleted';
 import TrainingPlan from './pages/TrainingPlan/TrainingPlan';
 import Header from './components/Header/Header';
-import PDFpage from './components/PDFpage/PDFpage'; 
 
 import './App.css';
 
@@ -28,13 +27,12 @@ function App() {
 					<Route path="/registration" element={<Registration />} />
 					<Route path="/registerCompleted" element={<RegisterCompleted />} />
 					<Route path="/trainingPlan" element={<TrainingPlan />} />
-					<Route path="/pdf" element={<PDFpage />} />
 				</Routes>
 			</Router>
 			<Footer />
     </div>
   );
 }
-
+	 	
 export default App;
 
