@@ -15,16 +15,18 @@ import courseIcon3 from '../../assets/courseIcon4.png';
 
 import {Technology, Future ,Skills ,Government ,Behavior  } from '../../pages/TrainingPlan/coursesInfo';
 
-import { PDFDownloadLink ,Image,Text , Document , Page, View, PDFViewer} from '@react-pdf/renderer';
+import {Image,Text , Document , Page, View, PDFViewer} from '@react-pdf/renderer';
 
 import Styles from './Styles';
 
 function equal(fleft, fright) {
     
+    
     if (fleft.includes(fright) || fright.includes(fleft)) {
-       
+        
         return true;
     }
+
 
     return false;
 }
@@ -73,6 +75,16 @@ const courses = [
     filter(Behavior, group, sector ,degree)
 ]    
 
+function IntroductionTitlePagePDF(props) {
+    return (
+        <Page size={[1400, 800]} >
+            <View style={Styles.introductionTitlePage__container}>
+                <Text style={Styles.introductionTitlePage__text}>الخطة التدريبية</Text>
+                <Text style={Styles.introductionTitlePage__text}>للعاملين بالبنك الاهلي المصري</Text>
+            </View>
+        </Page>
+    );
+}
 
 function SectorTitlePDF(props) {
     return (
@@ -106,7 +118,6 @@ function CourseCardPDF(props){
     return (
         <View style={Styles.courseCardPdf}>
             <View style={Styles.courseCardPdf__upperCard}>
-                {console.log(props.description)}
                 <Text style={Styles.courseCardPdf__upperCard__title}>{props.name}</Text>
                 <Text style={Styles.courseCardPdf__upperCard__text}>{props.description}</Text>
             </View>
@@ -136,11 +147,12 @@ function PDFSinglePage(props) {
 
 const PDFDocumentNBE = () => (
     <Document >
-        <PDFSinglePage courses={courses[0]} option={options[0]}/>
-        <PDFSinglePage courses={courses[1]} option={options[1]}/>
-        <PDFSinglePage courses={courses[2]} option={options[2]}/>
-        <PDFSinglePage courses={courses[3]} option={options[3]}/>
-        <PDFSinglePage courses={courses[4]} option={options[4]}/>
+        <IntroductionTitlePagePDF />
+        {courses[0].length > 0 && <PDFSinglePage courses={courses[0]} option={options[0]}/> }
+        {courses[1].length > 0 && <PDFSinglePage courses={courses[1]} option={options[1]}/> }
+        {courses[2].length > 0 && <PDFSinglePage courses={courses[2]} option={options[2]}/> }
+        {courses[3].length > 0 && <PDFSinglePage courses={courses[3]} option={options[3]}/> }
+        {courses[4].length > 0 && <PDFSinglePage courses={courses[4]} option={options[4]}/> }
     </Document>
 );
 

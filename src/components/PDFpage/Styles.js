@@ -19,6 +19,7 @@ const Styles = StyleSheet.create({
         marginBottom: 20,
         border: "#F49E3B 2px solid",
         borderRadius: 10,
+        fontFamily: 'GE_SS_TEXT_LIGHT',
     },
     PDFpage__container: {
         padding: 50,
@@ -150,6 +151,22 @@ const Styles = StyleSheet.create({
         color: "#00643E",
     },
 
+    introductionTitlePage__container:{
+        backgroundColor: "#F49E3B",
+        height: 150,
+        width: "100%",
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        margin: "auto",
+        fontFamily: 'GE_SS_TEXT_LIGHT',
+    },
+    introductionTitlePage__text:{
+        fontSize: 40,
+        color: "#00643E",
+        
+    }
     
 });
 

@@ -29,7 +29,6 @@ function EnglishLearningRoller(props){
         }
     }
 
-    console.log(props.text);
     return (
         <div className="englishLearningRoller">
             <div className='englishLearningRoller__textContainer' > 

@@ -1,6 +1,5 @@
 // TrainingPlan  function component 
 import React, { useState, useEffect } from 'react';
-import Pdf from "react-to-pdf";
 import { Link } from 'react-router-dom';
 import NBEButton from '../../components/NBEButton/NBEButton';
 
@@ -238,7 +237,7 @@ function TrainingPlan() {
                     {({ blob, url, loading, error }) =>
                         loading ? 'Loading document...' : <NBEButton text="تحميل الخطة" marginBottom ="0" />
                     }
-                </PDFDownloadLink> 
+                </PDFDownloadLink>
                 
             </div>
         </div>
