@@ -27,6 +27,10 @@ import { setRegister } from '../../redux/registerSlice';
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
 import {Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
 
+import {PDFDownloadLink} from '@react-pdf/renderer';
+
+import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
+
 import './TrainingPlan.css';
 
 
@@ -228,9 +232,13 @@ function TrainingPlan() {
                 <Link to="/registration" className='trainingPlan__Link' >
                     <NBEButton text="الرجوع" marginBottom ="0" onClick={clearSelectors} />
                 </Link>
-                <Link to="/pdf">
-                    <NBEButton text="تحميل الخطة" marginBottom ="0" />
-                </Link>
+            
+            
+                <PDFDownloadLink document={<PDFDocumentNBE />} fileName="الخطة التدريبية للعاملية بالبنك الاهلي المصري.pdf">
+                    {({ blob, url, loading, error }) =>
+                        loading ? 'Loading document...' : <NBEButton text="تحميل الخطة" marginBottom ="0" />
+                    }
+                </PDFDownloadLink> 
                 
             </div>
         </div>
