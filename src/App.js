@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer';
 import Registration from './pages/Registr/Registration';
 import RegisterCompleted from './pages/RegisterCompleted/RegisterCompleted';
 import TrainingPlan from './pages/TrainingPlan/TrainingPlan';
-import PDFpage from './components/PDFpage/PDFpage';
+// import PDFpage from './components/PDFpage/PDFpage';
 import Header from './components/Header/Header';
 
 import './App.css';

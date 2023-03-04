@@ -21,6 +21,14 @@ import Styles from './Styles';
 
 function equal(fleft, fright) {
     
+    // if fleft not null or fright not null return false
+    if (fleft === null || fright === null) {
+        return false;
+    }
+    // if fleft and fright are null return true
+    if (fleft === null && fright === null) {
+        return true;
+    }
     
     if (fleft.includes(fright) || fright.includes(fleft)) {
         
