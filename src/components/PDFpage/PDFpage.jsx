@@ -157,7 +157,6 @@ function PDFSinglePage(props) {
     );
 }
 
-
 const PDFDocumentNBE = () => (
     <Document >
         <IntroductionTitlePagePDF />
