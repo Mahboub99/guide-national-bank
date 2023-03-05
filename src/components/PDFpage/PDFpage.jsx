@@ -13,7 +13,11 @@ import courseIcon2 from '../../assets/courseIcon2.png';
 import courseIcon3 from '../../assets/courseIcon4.png';
 
 
-import {Technology, Future ,Skills ,Government ,Behavior  } from '../../pages/TrainingPlan/coursesInfo';
+import { Behavior } from '../../pages/TrainingPlan/Behavior'
+import { Government } from '../../pages/TrainingPlan/Government'
+import { Technology } from '../../pages/TrainingPlan/Technology'
+import { Future } from '../../pages/TrainingPlan/Future'
+import { Skills } from '../../pages/TrainingPlan/Skills'
 
 import {Image,Text , Document , Page, View, PDFViewer} from '@react-pdf/renderer';
 

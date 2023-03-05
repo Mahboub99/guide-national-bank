@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import NBEButton from '../../components/NBEButton/NBEButton';
 import RegistrationElement from '../../components/RegistrationElement/RegistrationElement';
 import { useSelector} from 'react-redux';
-import { groups ,units ,levels ,departments } from './selectors';
+import { groups ,levels ,departments } from './selectors';
 
 import './Registration.css';
 

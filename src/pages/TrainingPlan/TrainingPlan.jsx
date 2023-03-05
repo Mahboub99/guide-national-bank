@@ -24,7 +24,12 @@ import { setRegister } from '../../redux/registerSlice';
 
 
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
-import {Technology, Future ,Skills ,Government ,Behavior  } from './coursesInfo';
+
+import { Behavior } from './Behavior'
+import { Government } from './Government'
+import { Technology } from './Technology'
+import { Future } from './Future'
+import { Skills } from './Skills'
 
 import {PDFDownloadLink} from '@react-pdf/renderer';
 
