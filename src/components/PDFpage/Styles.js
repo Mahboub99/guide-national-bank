@@ -67,7 +67,7 @@ const Styles = StyleSheet.create({
         marginTop:20,
     },
     sectorTitle__text: {
-        width: "50%",
+        width: "60%",
         fontSize: 28,
         fontWeight: 700,
         color: "white",
@@ -79,7 +79,7 @@ const Styles = StyleSheet.create({
     },
     sectorTitle__pdf__img: {
         width: 50,
-        marginLeft: 600,
+        marginLeft: 550,
     },
     PDFpage__courses: {
 

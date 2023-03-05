@@ -145,7 +145,7 @@ function CourseCardPDF(props){
 function PDFSinglePage(props) {
     return (
         /**page with arabic langauge */
-        <Page style={Styles.page} size={[1400, 1600]}>
+        <Page style={Styles.page} size={[1400, 1350]}>
             <SectorTitlePDF text={props.option.text} icon={props.option.icon} />
             <View style={Styles.PDFpage__courses}>
                 {props.courses.map((course) => (
@@ -157,14 +157,64 @@ function PDFSinglePage(props) {
     );
 }
 
+
 const PDFDocumentNBE = () => (
     <Document >
         <IntroductionTitlePagePDF />
-        {courses[0].length > 0 && <PDFSinglePage courses={courses[0]} option={options[0]}/> }
-        {courses[1].length > 0 && <PDFSinglePage courses={courses[1]} option={options[1]}/> }
-        {courses[2].length > 0 && <PDFSinglePage courses={courses[2]} option={options[2]}/> }
-        {courses[3].length > 0 && <PDFSinglePage courses={courses[3]} option={options[3]}/> }
-        {courses[4].length > 0 && <PDFSinglePage courses={courses[4]} option={options[4]}/> }
+        
+        {
+            courses[0].length > 0 && courses[0].reduce((resultArray, item, index) => { 
+                const chunkIndex = Math.floor(index/15)
+                if(!resultArray[chunkIndex]) {
+                    resultArray[chunkIndex] = [] // start a new chunk
+                }
+                resultArray[chunkIndex].push(item)
+                return resultArray
+            }, []).map((slot, index) => <PDFSinglePage key={index} courses={slot} option={options[0]}/>)
+        }
+        {
+            courses[1].length > 0 && courses[1].reduce((resultArray, item, index) => { 
+                const chunkIndex = Math.floor(index/15)
+                if(!resultArray[chunkIndex]) {
+                    resultArray[chunkIndex] = [] // start a new chunk
+                }
+                resultArray[chunkIndex].push(item)
+                return resultArray
+            }, []).map((slot, index) => <PDFSinglePage key={index} courses={slot} option={options[1]}/>)
+        }
+        {
+            courses[2].length > 0 && courses[2].reduce((resultArray, item, index) => { 
+                const chunkIndex = Math.floor(index/15)
+                if(!resultArray[chunkIndex]) {
+                    resultArray[chunkIndex] = [] // start a new chunk
+                }
+                resultArray[chunkIndex].push(item)
+                return resultArray
+            }, []).map((slot, index) => <PDFSinglePage key={index} courses={slot} option={options[2]}/>)
+        }
+        {
+            courses[3].length > 0 && courses[3].reduce((resultArray, item, index) => { 
+                const chunkIndex = Math.floor(index/15)
+                if(!resultArray[chunkIndex]) {
+                    resultArray[chunkIndex] = [] // start a new chunk
+                }
+                resultArray[chunkIndex].push(item)
+                return resultArray
+            }, []).map((slot, index) => <PDFSinglePage key={index} courses={slot} option={options[3]}/>)
+        }
+
+
+        {
+            // devided courses[4] int slots evey slot is 15 courses array  and each slot is a page
+            courses[4].length > 0 && courses[4].reduce((resultArray, item, index) => { 
+                const chunkIndex = Math.floor(index/15)
+                if(!resultArray[chunkIndex]) {
+                    resultArray[chunkIndex] = [] // start a new chunk
+                }
+                resultArray[chunkIndex].push(item)
+                return resultArray
+            }, []).map((slot, index) => <PDFSinglePage key={index} courses={slot} option={options[4]}/>)
+        }
     </Document>
 );
 
