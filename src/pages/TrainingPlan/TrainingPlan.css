@@ -119,6 +119,7 @@
 
 .courseCard__lowerCard{
     padding:20px;
+    margin-top: 15px;
 }
 .courseCard__lowerCard--element{
     display: flex;
@@ -166,4 +167,24 @@
         left: -30px;
     }
 
+}
+
+.tooltip{
+  position: relative;
+  cursor: pointer;
+  display: block;
+  background: rgb(244, 158, 59, 0.9);
+  margin-left: 80%;
+  transform: translateX(-50%);
+  padding: 5px;
+  z-index: 1;
+  width: 280px;
+  height: auto;
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 12px;
+  
+}
+.courseCard__tooltip{
+ cursor: pointer;   
 }

@@ -12,7 +12,7 @@ import completed5 from '../../assets/completed5.png';
 
 import courseIcon1 from '../../assets/courseIcon1.png';
 import courseIcon2 from '../../assets/courseIcon2.png';
-import courseIcon3 from '../../assets/courseIcon3.png';
+import courseIcon3 from '../../assets/courseIcon4.png';
 
 
 import arrow from '../../assets/arrow.png';
@@ -32,10 +32,10 @@ import { Future } from './Future'
 import { Skills } from './Skills'
 
 import {PDFDownloadLink} from '@react-pdf/renderer';
-
 import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
 
 import './TrainingPlan.css';
+
 
 
 const options = [
@@ -105,6 +105,28 @@ function LowerCardElement(props){
     );
 }
 
+function LowerCardElementWithToolTip(props){
+    const [hover, setHover] = useState(false);
+    const handleMouseEnter = () => setHover(true);
+    const handleMouseLeave = () => setHover(false);
+
+    return (
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="courseCard__tooltip"> 
+            <div className='courseCard__lowerCard--element'>
+                <div className='courseCard__lowerCard--text'>
+                    {props.duration}
+                </div>
+                <div className='courseCard__lowerCard--icon-container'>
+                    <img className='courseCard__lowerCard--icon' src={props.firstIcon} alt='courseIcon' />
+                </div>   
+            </div>
+            {hover && <div className='tooltip'>
+                الكفاءات المطلوب توافرها بجميع العاملين بالمؤسسة باختلاف وظائفهم ودرجاتهم الوظيفية والمسؤوليات المطلوبة منهم     
+            </div>} 
+        </div>
+    );
+}
+
 function CourseCard(props){
     return (
         <div className='courseCard'>
@@ -119,8 +141,10 @@ function CourseCard(props){
             </div>
             <div className='courseCard__lowerCard'>
                <LowerCardElement duration={props.duration} firstIcon={props.firstIcon} />          
-               <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />          
-               <LowerCardElement duration={props.level} firstIcon={props.thirdIcon} />          
+               <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />  
+               <LowerCardElementWithToolTip duration={props.level} firstIcon={props.thirdIcon} /> 
+                     
+                        
             </div>
         </div>
     );
