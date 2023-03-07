@@ -3,7 +3,7 @@ import { StyleSheet ,Font } from "@react-pdf/renderer";
 
 Font.register({
     family: 'GE_SS_TEXT_LIGHT',
-    src: 'http://localhost:8080/font.ttf',
+    src: 'https://TanwiirInteractive.b-cdn.net/GE_SS_TEXT_LIGHT.ttf',
 });
 
 const Styles = StyleSheet.create({
