@@ -24,6 +24,7 @@ import {Image,Text , Document , Page, View, PDFViewer} from '@react-pdf/renderer
 import Styles from './Styles';
 
 function equal(fleft, fright) {
+    // remove spaces from start and end of string
     
     // if fleft not null or fright not null return false
     if (fleft === null || fright === null) {
@@ -33,8 +34,10 @@ function equal(fleft, fright) {
     if (fleft === null && fright === null) {
         return true;
     }
+    fleft = fleft.trim();
+    fright = fright.trim();
     
-    if (fleft.includes(fright) || fright.includes(fleft)) {
+    if (fleft === fright) {
         
         return true;
     }
@@ -55,7 +58,7 @@ const options = [
     },
     {
         id: 1,
-        text: 'التكنولوجيا',
+        text: 'الوعي التكنولوجي',
         icon: completed2,
     },
     {
@@ -70,7 +73,7 @@ const options = [
     },
     {
         id: 4,
-        text: 'المهارات الإدارية والسلوكية',
+        text: 'المهارات السلوكية و الإدارية ',
         icon: completed5,
     },
 ];

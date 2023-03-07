@@ -46,7 +46,7 @@ const options = [
     },
     {
         id: 1,
-        text: 'التكنولوجيا',
+        text: 'الوعي التكنولوجي',
         icon: completed2,
     },
     {
@@ -61,7 +61,7 @@ const options = [
     },
     {
         id: 4,
-        text: 'المهارات الإدارية والسلوكية',
+        text: 'المهارات السلوكية و الإدارية ',
         icon: completed5,
     },
 ];
@@ -132,11 +132,12 @@ function CourseCard(props){
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
                  <div className='courseCard__upperCard--title'>
-                   {props.name.substring(0, 50)}... 
+                   {props.name} 
                  </div>
                  <div className='courseCard__upperCard--text'>
                    {/** just 100 letters  of description */}
-                     {props.description.substring(0, 100)}...
+                     {props.description}
+                     {/* {props.description.length > 200 && '...'} */}
                  </div>
             </div>
             <div className='courseCard__lowerCard'>
@@ -151,8 +152,8 @@ function CourseCard(props){
 }
 
 function equal(fleft, fright) {
-    
 
+    
     // if fleft not null or fright not null return false
     if (fleft === null || fright === null) {
         return false;
@@ -161,8 +162,10 @@ function equal(fleft, fright) {
     if (fleft === null && fright === null) {
         return true;
     }
+    fleft = fleft.trim();
+    fright = fright.trim();
 
-    if (fleft.includes(fright) || fright.includes(fleft)) {
+    if (fleft === fright) {
        
         return true;
     }
@@ -175,6 +178,7 @@ function filter(p, group, unit, level) {
 }
 
 function TrainingPlan() {
+
     const activeId = useSelector((state) => state.active.value);
     const currentIndex = useSelector((state) => state.currentIndex.value);
     const [itemsPerPage, setItemsPerPage] = useState(4);
