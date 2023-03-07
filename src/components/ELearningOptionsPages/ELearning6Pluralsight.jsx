@@ -17,7 +17,7 @@ function ELearning6Pluralsight() {
                 المباشر والمستوى الإداري الأعلى على نظام الاوراكل
                 من خلال 
                 
-                <a className='eLearningOptionPage__text--orange' href='https://www.pluralsight.com/ '>
+                <a className='eLearningOptionPage__text--orange' target="_blank"  href='https://www.pluralsight.com/ '>
                     <p className='eLearningOptionPage__text--orange' >  Registration Pluralsight :الرابط التالي</p>
                 </a>
                 سيتم ارسال تعليمات و طريقة الدخول للزملاء

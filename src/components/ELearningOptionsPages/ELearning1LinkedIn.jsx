@@ -12,7 +12,7 @@ function ELearningLinkedIn() {
                     المجالات.  <span className='eLearningOptionPage__text--orange'>مع أكثر من 15000 دورة تدريبية وتوصية مخصصة،</span> يمكنك اكتشاف
                     الدورات التدريبية المتعلقة بمجال عملك واهتماماتك وإكمالها وتتبعها يمكننك التسجيل  من خلال
                 </p>
-                <a className='eLearningOptionPage__text--orange' href='https://www.linkedin.com/learning '>
+                <a className='eLearningOptionPage__text--orange' href='https://www.linkedin.com/learning ' target="_blank">
                     <p className='eLearningOptionPage__text--orange'>  ELearningLinkedIn:الرابط التالي</p>
                 </a>
                 <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50' >

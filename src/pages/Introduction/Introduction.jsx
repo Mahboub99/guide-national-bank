@@ -9,7 +9,7 @@ function Introduction() {
 	return (
 		<div className="introduction">
 			<div className="introduction__container">
-			<p className="introduction__text">
+			<p className="introduction__text" dir='rtl'>
 				تم اعداد هذا الدليل الاسترشادي من قبل قطاع المعرفة والتطوير بهدف
 				تعريفكم بالمسارات التدريبية المختلفة والمخصصة لمختلف قطاعات
 				مصرفنا، برجاء تحديد المجموعة الخاصة بكم والقطاع والدرجة الوظيفية

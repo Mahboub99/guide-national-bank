@@ -15,7 +15,7 @@ function ELearning7Almentor() {
                 <span className='eLearningOptionPage__text--orange' > Staff NBE تطبيق <span className='eLearning--hide'>p</span> </span>
                 الدخول من خلال 
                 <p> او الدخول علي </p> 
-                <a className='eLearningOptionPage__text--orange' href='http://account.almentor.net/ '>
+                <a className='eLearningOptionPage__text--orange'  target="_blank" href='http://account.almentor.net/ '>
                     <p className='eLearningOptionPage__text--orange' >  net.almentor.Nbe :رابط المنصة</p>
                 </a>
                 <p>اسم المستخدم : رقم الموظف الخارجي</p>

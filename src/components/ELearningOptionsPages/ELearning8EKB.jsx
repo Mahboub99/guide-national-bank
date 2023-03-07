@@ -14,7 +14,7 @@ function ELearning8EKB() {
                 </p>
                 اختيار التسجيل كباحث و تسجيل البيانات و البريد
                 الشخصي الخارجى               
-                <a className='eLearningOptionPage__text--orange' href='https://www.ekb.eg/ '>
+                <a className='eLearningOptionPage__text--orange'  target="_blank" href='https://www.ekb.eg/ '>
                     <p className='eLearningOptionPage__text--orange' >  EBK :رابط المنصة</p>
                 </a>
                  <p className='eLearningOptionPage__text--orange' >يجب الدخول مرة واحدة علي الأقل كل ثلاث شهور من    

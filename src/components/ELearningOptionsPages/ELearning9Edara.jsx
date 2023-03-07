@@ -18,7 +18,7 @@ function ELearning9Edara() {
                     و اتباع الخطوات المذكورة
                 </span>
                 <p>
-                    <a className='eLearningOptionPage__text--orange' href='https://edara.com/ '>
+                    <a className='eLearningOptionPage__text--orange'  target="_blank" href='https://edara.com/ '>
                         <span className='eLearningOptionPage__text--orange' >  edara.com منصة 
                             <span className='eLearning--hide'>a</span> 
                         </span> 
