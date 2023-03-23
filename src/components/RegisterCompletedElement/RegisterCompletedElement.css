@@ -6,7 +6,7 @@
 }
 
 .registerCompletedElement__container{
-    width:350px;
+    width:300px;
     height: 150px;
     border-radius:28px;
     background-color: #00643E;
@@ -23,6 +23,7 @@
 .registerCompletedElement__container:hover{
     cursor: pointer;
     background-color: #F49E3B;
+    font-size: 16px;
 }
 
 .registerCompletedElement__container--image{

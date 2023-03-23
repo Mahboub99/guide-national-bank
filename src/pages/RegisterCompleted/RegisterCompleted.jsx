@@ -16,11 +16,12 @@ const completed = [
     {hoverText: "وهي الدورات التدريبية في موضوعات متقدمة متعلقة بمستقبل البنك لمساعدتنا جميعاً على مواكبة التطور السريع في القطاع المصرفي", img: completed1, text: "مستقبل الأعمال"},
     {hoverText: "وهي الدورات التدريبية التي تغطي مهارات تكنولوجيا المعلومات وإستخدام أفضل وسائل التكنولوجيا الحديثة لإتمام المهام بشكل أفضل", img: completed2, text: "الوعي التكنولوجي"},
     {hoverText: "وهي الدورات التدريبية المتعلقة بالحوكمة والالتزام داخل البنك والتي تساعدنا جميعاً على فهم القواعد والسلوكيات المتبعة", img: completed3, text: "الحوكمة و الرقابة"},
+];
+
+const completed_2 = [
     {hoverText: "وهي الدورات التدريبية التي تهدف إلى تطوير المهارات الشخصية والإدارية والقيادية بهدف الوصول إلى مستوى الكفاءة الإدارية المطلوب للوظيفة", img: completed4, text: "المهارات السلوكية و الإدارية "},
     {hoverText: "وهي الدورات التدريبية في الموضوعات الفنية والمصرفية المتعلقة بأعمال البنك وكيفية تنفيذ المهام المصرفية اليومية على أكمل وجه", img: completed5, text: "المهارات الفنية"},
 ];
-
-
 
 // RegisterCompleted function component put  RegisterCompletedElement component in it on container and then a nbebutton outside the container 
 function RegisterCompleted() {
@@ -33,6 +34,12 @@ function RegisterCompleted() {
 
             <div className="registerCompleted__container">
                 {completed.map((item, index) => {
+                    return <RegisterCompletedElement key={index} text={item.text} img={item.img} hoverText={item.hoverText}/>
+                })}
+              
+            </div>
+            <div className="registerCompleted__container registerCompleted__container--margin--bottom">
+                {completed_2.map((item, index) => {
                     return <RegisterCompletedElement key={index} text={item.text} img={item.img} hoverText={item.hoverText}/>
                 })}
               

@@ -21,18 +21,18 @@
 }
 .trainingPlan__arrow--right{
     position: absolute;
-    width: 100px;
+    width: 120px;
     top: 40%;
-    right: -70px;
+    right: -100px;
     transform: translateY(-50%);
     cursor: pointer;
 }
 
 .trainingPlan__arrow--left{
     position: absolute;
-    width: 100px;
+    width: 120px;
     top: 40%;
-    left: -70px;
+    left: -100px;
     transform: translateY(-50%);
     cursor: pointer;
     
@@ -46,6 +46,10 @@
     flex-flow: row wrap;
 }
 
+.trainingPlan__content--null{
+    color: white;
+    font-size: 30px;
+}
 .trainingPlan__nav{  
     position: absolute;
     border-radius: 14px;
@@ -88,10 +92,13 @@
  color: white;
  font-size: 16px;
 }
-
+.navOption__hoverText{
+    color: white;
+    font-size: 10px;
+}
 .courseCard{
     width: 270px;
-    height: 90%;
+    height: 100%;
     border-radius: 10px;
     background-color: white;     
     margin:10px;
@@ -138,6 +145,17 @@
     width: 20px;
     margin: auto;
 }
+.courseCard__button{
+    width: 30%;
+    height: 30px;
+    background-color: #F49E3B;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
 
 .trainingPlan__buttons{
     width: 90%;
@@ -159,12 +177,12 @@
     /*
     make arrows smaller*/
     .trainingPlan__arrow--right{
-        width: 30px;
-        right: -30px;
+        width: 80px;
+        right: -60px;
     }
     .trainingPlan__arrow--left{
-        width: 30px;
-        left: -30px;
+        width: 80px;
+        left: -60px;
     }
 
 }

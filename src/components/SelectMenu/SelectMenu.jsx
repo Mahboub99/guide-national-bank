@@ -8,7 +8,10 @@ import './SelectMenu.css';
 
 function SelectMenu(props) {
   const [isOpen, setOpen] = useState(false);
-  const [selected, setSelected] = useState(props.defaultText);
+
+  const diplayedText = localStorage.getItem(props.defaultText);
+  
+  const [selected, setSelected] = useState(diplayedText || props.defaultText);
   const toggleDropdown = () => setOpen(!isOpen);
   const dispatch = useDispatch();
   const selectOption = (option) => {

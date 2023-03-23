@@ -23,7 +23,8 @@
     position: relative;
   }
   .option{
-    font-size: 10px
+    font-size: 10px;
+    text-align: right;
   }
   .select_wrap .default_option {
     background: var(--white);

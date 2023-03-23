@@ -37,32 +37,37 @@ import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
 import './TrainingPlan.css';
 
 
-
 const options = [
     {
         id: 0,
         text: 'الحوكمة و الرقابة',
         icon: completed1,
+        hoverText: "وهي الدورات التدريبية المتعلقة بالحوكمة والالتزام داخل البنك والتي تساعدنا جميعاً على فهم القواعد والسلوكيات المتبعة",
+        
     },
     {
         id: 1,
         text: 'الوعي التكنولوجي',
         icon: completed2,
+        hoverText: "وهي الدورات التدريبية التي تغطي مهارات تكنولوجيا المعلومات وإستخدام أفضل وسائل التكنولوجيا الحديثة لإتمام المهام بشكل أفضل",
     },
     {
         id: 2,
         text: 'مستقبل الاعمال',
         icon: completed3,
+        hoverText: "وهي الدورات التدريبية في موضوعات متقدمة متعلقة بمستقبل البنك لمساعدتنا جميعاً على مواكبة التطور السريع في القطاع المصرفي",
     },
     {
         id: 3,
         text: 'المهارات الفنية',
         icon: completed4,
+        hoverText: "وهي الدورات التدريبية في الموضوعات الفنية والمصرفية المتعلقة بأعمال البنك وكيفية تنفيذ المهام المصرفية اليومية على أكمل وجه",
     },
     {
         id: 4,
         text: 'المهارات السلوكية و الإدارية ',
         icon: completed5,
+        hoverText: "وهي الدورات التدريبية التي تهدف إلى تطوير المهارات الشخصية والإدارية والقيادية بهدف الوصول إلى مستوى الكفاءة الإدارية المطلوب للوظيفة",
     },
 ];
 
@@ -86,8 +91,9 @@ function NavOption(props) {
 
     return (
         <div className={`navOption ${active ? 'navOption__active' : ''} ${hover ? 'navOption__hover' : ''}`} onClick={handleClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            <img className='navOption__img' src={props.icon} alt={props.text} />
-            <p className='navOption__text'>{props.text}</p>
+            {!hover && <img className='navOption__img' src={props.icon} alt={props.text} />}
+            { !hover && <p className='navOption__text'>{props.text}</p>}
+            {hover && <p className='navOption__hoverText'>{props.hoverText}</p>}
         </div>
     );
 }
@@ -143,10 +149,14 @@ function CourseCard(props){
             <div className='courseCard__lowerCard'>
                <LowerCardElement duration={props.duration} firstIcon={props.firstIcon} />          
                <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />  
-               <LowerCardElementWithToolTip duration={props.level} firstIcon={props.thirdIcon} /> 
-                     
-                        
+               {/* <LowerCardElementWithToolTip duration={props.level} firstIcon={props.thirdIcon} />        */}
             </div>
+            {/* NBE button link in new tab*/}
+
+            <a href="https://www.youtube.com/" target="_blank">
+                <button className='courseCard__button'>التسجيل</button>
+            </a>
+        
         </div>
     );
 }
@@ -183,6 +193,8 @@ function TrainingPlan() {
     const currentIndex = useSelector((state) => state.currentIndex.value);
     const [itemsPerPage, setItemsPerPage] = useState(4);
     const dispatch = useDispatch();
+    
+    
 
     useEffect(() => {
         const handleResize = () => {
@@ -231,11 +243,11 @@ function TrainingPlan() {
         }
 
         const IncreaseRoll = () => {
-            const index = (currentIndex + 1) % components.length;
+            const index = (currentIndex + itemsPerPage);
             dispatch(setCurrentIndex(index));
         };
         const DecreaseRoll = () => {
-            const index = (currentIndex - 1 + components.length) % components.length;
+            const index = (currentIndex - itemsPerPage) ;
             dispatch(setCurrentIndex(index));
         };
         // if currentIndex + itemsPerPage > components.length then 
@@ -243,28 +255,30 @@ function TrainingPlan() {
 
       //clearSelectors :  make the setRegister value the defulte value and clear local storage items  sector group ans jobLevel 
         const clearSelectors = () => {
-            localStorage.removeItem('اسم القطاع');
-            localStorage.removeItem('اسم المجموعة');
-            localStorage.removeItem(' الدرجة الوظيفية');
-            dispatch(setRegister({value:'group'}));
+            // localStorage.removeItem('اسم القطاع');
+            // localStorage.removeItem('اسم المجموعة');
+            // localStorage.removeItem(' الدرجة الوظيفية');
+            // dispatch(setRegister({value:'group'}));
+            dispatch(setActiveId(4));
+
         }
     return (
         <div className="trainingPlan" >
             <div className='trainingPlan__container'>
-                <img src={arrow} alt='arrow' className='trainingPlan__arrow--right' onClick={IncreaseRoll} />
-                <img src={arrowLeft} alt='arrow' className='trainingPlan__arrow--left' onClick={DecreaseRoll} />
+                {currentIndex + itemsPerPage < components.length && <img src={arrow} alt='arrow' className='trainingPlan__arrow--right' onClick={IncreaseRoll} />}
+                {currentIndex - itemsPerPage >= 0 && <img src={arrowLeft} alt='arrow' className='trainingPlan__arrow--left' onClick={DecreaseRoll} />}
                 
                 <div className='trainingPlan__nav'>
                     {options.map((option) => (
-                        <NavOption key={option.id} id={option.id} activeId={activeId} text={option.text}  icon={option.icon} />
+                        <NavOption key={option.id} id={option.id} activeId={activeId} text={option.text}  icon={option.icon} hoverText={option.hoverText} />
                     ))}
                 </div>
-                <div className='trainingPlan__content'>
-                    {/** loop over courseInfo.Governance */}
+                {displayedComponents.length > 0 && <div className='trainingPlan__content'>
                     {displayedComponents.map((course) => (
                         <CourseCard key={course.id} name={course.name} description={course.description} duration={course.duration} firstIcon={courseIcon1} attendance={course.attendance} secondIcon={courseIcon2} level={course.job_category} thirdIcon={courseIcon3} />
                     ))}
-                </div>
+                </div>}
+                { displayedComponents.length === 0 && <div className="trainingPlan__content--null">سوف يتم اتاحة البرامج الخاصة بهذا القسم في أقرب وقت</div> }
             </div>
             <div className='trainingPlan__buttons' >
                 <Link to="/registration" className='trainingPlan__Link' >

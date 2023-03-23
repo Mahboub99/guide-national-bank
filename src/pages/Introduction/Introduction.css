@@ -7,7 +7,7 @@
 }
 .introduction__text{
 	font-family: 'Tajawal', sans-serif;
-	font-size: 20px;
+	font-size: 30px;
 	color:white;
 	display: block;
 	text-align: center;
@@ -16,7 +16,7 @@
 }
 .introduction__text--sign{
 	font-family: 'Tajawal', sans-serif;
-	font-size: 20px;
+	font-size: 30px;
 	color:white;
 	margin-bottom: 20px;
 	display: block;
@@ -27,7 +27,7 @@
 
 .introduction__container{
 	background-color: #00643E;
-	width:30%;
+	width:40%;
 	border-radius:28px; 
 	padding: 20px 20px 0px;
 }

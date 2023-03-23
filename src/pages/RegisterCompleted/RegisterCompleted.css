@@ -16,13 +16,14 @@
 }
 
 .registerCompleted__container{
-	
 	display: flex;
 	flex-flow: row-reverse wrap;
 	justify-content: center;
 	align-items: center;
+}
 
-	margin-bottom: 40px;
+.registerCompleted__container--margin--bottom{
+	margin-bottom: 20px;
 }
 
 .registerCompleted__text{
