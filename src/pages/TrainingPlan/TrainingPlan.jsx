@@ -137,8 +137,16 @@ function LowerCardElementWithToolTip(props){
 function CourseCard(props){
     let name = props.name;
     name = name.trim();
-
-    const link = nameLinkMap[name];
+    // remove any \n or \t or \r 
+    name = name.replace(/(\r\n|\n|\r|\t)/gm, "");
+    let link = '';
+    // if name not exist in map return default link
+    if (!nameLinkMap[name]) {
+        console.log(name);
+        link = 'default';
+    }else {
+        link = nameLinkMap[name];
+    }
     let isLink = link.includes('http');
 
 
