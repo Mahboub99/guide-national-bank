@@ -6,15 +6,15 @@
 }
 
 .registerCompletedElement__container{
-    width:300px;
+    width:230px;
     height: 150px;
     border-radius:28px;
     background-color: #00643E;
     color: white;
     font-family: 'Tajawal', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    margin:20px;
+    margin:15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .registerCompletedElement__container--image{
-	width:50px;
+	width:30px;
     margin-left: 20px;
     text-align: left;
 }
@@ -55,6 +55,7 @@
     width:15%;
     text-align: left;
 }
+
 /*on hover of container1 diapper the containert 2*/
 .registerCompletedElement__container:hover .registerCompletedElement__container2{
     display: none;
