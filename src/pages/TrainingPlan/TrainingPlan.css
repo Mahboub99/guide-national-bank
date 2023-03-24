@@ -157,6 +157,12 @@
     border: none;
 }
 
+.courseCard__button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
 .trainingPlan__buttons{
     width: 90%;
     height: 10%;
@@ -205,4 +211,9 @@
 }
 .courseCard__tooltip{
  cursor: pointer;   
+}
+
+.courseCard__notLink{
+    font-size: 14px;
+    color: #F49E3B;
 }

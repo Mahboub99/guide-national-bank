@@ -25,11 +25,12 @@ import { setRegister } from '../../redux/registerSlice';
 
 import {setCurrentIndex} from '../../redux/currentIndexSlice';
 
-import { Behavior } from './Behavior'
-import { Government } from './Government'
-import { Technology } from './Technology'
-import { Future } from './Future'
-import { Skills } from './Skills'
+import { Behavior } from './Behavior';
+import { Government } from './Government';
+import { Technology } from './Technology';
+import { Future } from './Future';
+import { Skills } from './Skills';
+import { nameLinkMap } from './NameLink';
 
 import {PDFDownloadLink} from '@react-pdf/renderer';
 import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
@@ -134,6 +135,13 @@ function LowerCardElementWithToolTip(props){
 }
 
 function CourseCard(props){
+    let name = props.name;
+    name = name.trim();
+
+    const link = nameLinkMap[name];
+    let isLink = link.includes('http');
+
+
     return (
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
@@ -153,9 +161,10 @@ function CourseCard(props){
             </div>
             {/* NBE button link in new tab*/}
 
-            <a href="https://www.youtube.com/" target="_blank">
-                <button className='courseCard__button'>التسجيل</button>
-            </a>
+            {isLink && <a href={link} target="_blank">
+                <button className='courseCard__button'  >التسجيل</button>
+            </a>}
+            { !isLink && <p className='courseCard__notLink'>{link}</p>}
         
         </div>
     );
