@@ -4,10 +4,10 @@
 	bottom: 0;
 	width: 100%;
 	background-color: white;
-	z-index: 20;
+	z-index: 1;
 }
 .footer__left--click{
-	cursor: pointer;
+	/* cursor: pointer; */
 	position: fixed;
 	bottom: 5%;
 	left:5.5%;

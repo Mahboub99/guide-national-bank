@@ -13,6 +13,7 @@ import RegisterCompleted from './pages/RegisterCompleted/RegisterCompleted';
 import TrainingPlan from './pages/TrainingPlan/TrainingPlan';
 // import PDFpage from './components/PDFpage/PDFpage';
 import Header from './components/Header/Header';
+import SideBar from './components/SideBar/SideBar';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
 			<Header />
+			<SideBar />
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />

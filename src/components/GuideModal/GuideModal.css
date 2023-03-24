@@ -2,10 +2,10 @@
     width: 25%  ;
 }
 
-
+/* 
 .GuideModal__img:hover{
     cursor: pointer;
-}
+} */
 
 /*for small screen make width*/
 @media screen and (max-width: 768px) {

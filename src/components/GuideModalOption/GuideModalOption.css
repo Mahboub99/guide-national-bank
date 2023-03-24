@@ -111,3 +111,31 @@
     width: 30px;
   }
 }
+
+.guideModalOption__container--circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00643E;
+  color: white;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  /*sahdow*/
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.guideModalOption__container--circle:hover{
+  cursor: pointer;
+  border: 3px solid #F49E3B;
+}
+
+.guideModalOption__container--circle--img{
+  width: 25px;
+}

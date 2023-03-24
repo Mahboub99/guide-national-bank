@@ -50,6 +50,24 @@ function OptionElement(props){
   )
 }
 
+// Add this code after the img in GuideModal() below if you want to return to the original GuideModal.jsx
+
+// {showGuideModal && (
+//   <div className="guideModal__container">
+//     <div className="guideModal__container--main">
+//       <div className='guideModal__container--closeContainer'>
+//           <img className='guideModal__container--close' onClick={toggleGuideModal} src={closeImg} alt="close" />
+//           {/* <span className="close-outer-modal" onClick={toggleGuideModal}>&times;</span> */}
+//       </div>
+//       {/* pass OptionElement to GuideModalOption as a component icon text */}
+//       {options.map((option, index) => (
+//         <GuideModalOption key={index} optionElement={option.component} icon={option.icon} text={option.text} />
+//       ))}
+      
+//       <OptionElement icon={guideOptionImg4} text={'أسال الموارد البشرية'} onClick={() => window.open('https://erpprodapp.nbe.ahly.bank/OA_HTML/RF.jsp?function_id=58839&resp_id=54511&resp_appl_id=20003&security_group_id=0&lang_code=US&oas=3qK7onxBYZLGfXfK48-HSg..&params=K-xkr2e9llnvvFYS3ovQLJYaT-jJgNEerbgvch1BfGY ', '_blank')} />
+//     </div>  
+//   </div>
+// )}
 
 function GuideModal() {
   // State to control the visibility of the outer modal
@@ -63,22 +81,6 @@ function GuideModal() {
   return (
     <div className='guideModal'>
         <img id="open-outer-modal-btn" className='GuideModal__img' onClick={toggleGuideModal}  src={leftIMage} alt="25sana" />
-      {showGuideModal && (
-        <div className="guideModal__container">
-          <div className="guideModal__container--main">
-            <div className='guideModal__container--closeContainer'>
-                <img className='guideModal__container--close' onClick={toggleGuideModal} src={closeImg} alt="close" />
-                {/* <span className="close-outer-modal" onClick={toggleGuideModal}>&times;</span> */}
-            </div>
-            {/* pass OptionElement to GuideModalOption as a component icon text */}
-            {options.map((option, index) => (
-              <GuideModalOption key={index} optionElement={option.component} icon={option.icon} text={option.text} />
-            ))}
-            
-            <OptionElement icon={guideOptionImg4} text={'أسال الموارد البشرية'} onClick={() => window.open('https://erpprodapp.nbe.ahly.bank/OA_HTML/RF.jsp?function_id=58839&resp_id=54511&resp_appl_id=20003&security_group_id=0&lang_code=US&oas=3qK7onxBYZLGfXfK48-HSg..&params=K-xkr2e9llnvvFYS3ovQLJYaT-jJgNEerbgvch1BfGY ', '_blank')} />
-          </div>  
-        </div>
-      )}
     </div>
   );
 }

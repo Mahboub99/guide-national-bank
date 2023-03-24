@@ -6,16 +6,34 @@ import closeImg from '../../assets/close.png';
 import './GuideModalOption.css';
 
 
-function OptionElement(props){
-  return (
-    <div className='guideModalOption__container--option' onClick={props.onClick} >
+// function OptionElement(props){
+//   return (
+//     <div className='guideModalOption__container--option' onClick={props.onClick} >
       
-      <div className='guideModalOption__container--option--imgContainer'>
-        <img className='guideModalOption__container--option--img' src={props.icon} alt="guideOptionImg1" />
+//       <div className='guideModalOption__container--option--imgContainer'>
+//         <img className='guideModalOption__container--option--img' src={props.icon} alt="guideOptionImg1" />
+//       </div>
+//       <div className='guideModalOption__container--option--textContainer'>
+//         <p>{[props.text]}</p>  
+//       </div>
+//     </div>
+//   )
+// }
+
+function OptionElement(props){
+  const [hover, setHover] = useState(false);
+  const handleMouseEnter = () => setHover(true);
+  const handleMouseLeave = () => setHover(false);
+
+  return (
+    <div className='guideModalOption__container--outer'>
+      <div className='guideModalOption__container--circle' onClick={props.onClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
+          <img className='guideModalOption__container--circle--img' src={props.icon} alt="guideOptionImg1" />
       </div>
-      <div className='guideModalOption__container--option--textContainer'>
-        <p>{[props.text]}</p>  
-      </div>
+      
+      {hover && <div className='sideBar_tooltip'>
+          {props.text}       
+      </div>} 
     </div>
   )
 }
