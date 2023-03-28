@@ -13,8 +13,9 @@ import guideOptionImg3 from '../../assets/guideOptionImg3.png';
 import guideOptionImg1 from '../../assets/guideOptionImg1.png';
 import guideOptionImg4 from '../../assets/guideOptionImg4.png';
 import homeImg from '../../assets/home.png';
-
-
+import { useDispatch } from 'react-redux';
+import { setRegister } from '../../redux/registerSlice';
+import { setActiveId } from '../../redux/activeSlice';
 import './SideBar.css';
 
 const options = [
@@ -48,6 +49,7 @@ const options = [
 //       </div>
 //     )
 // }
+
 function OptionElement(props){
     const [hover, setHover] = useState(false);
     const handleMouseEnter = () => setHover(true);
@@ -68,9 +70,18 @@ function OptionElement(props){
   
   
 function SideBar() {
+  const dispatch = useDispatch();
+  const clearSelectorsAndGoHome = () => {
+    localStorage.removeItem('اسم القطاع');
+    localStorage.removeItem('اسم المجموعة');
+    localStorage.removeItem(' الدرجة الوظيفية');
+    dispatch(setRegister({value:'group'}));
+    dispatch(setActiveId(4));
+    window.location = "/";
+  }
     return (
         <div className="sideBar">
-            <OptionElement icon={homeImg} text={'الرئيسية'} onClick={()=> window.location = "/"} />
+            <OptionElement icon={homeImg} text={'الرئيسية'} onClick={ clearSelectorsAndGoHome } />
             {options.map((option, index) => (
               <GuideModalOption key={index} optionElement={option.component} icon={option.icon} text={option.text} />
             ))}

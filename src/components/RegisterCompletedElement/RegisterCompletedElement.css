@@ -23,7 +23,7 @@
 .registerCompletedElement__container:hover{
     cursor: pointer;
     background-color: #F49E3B;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .registerCompletedElement__container--image{

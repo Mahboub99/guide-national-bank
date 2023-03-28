@@ -35,6 +35,10 @@
 	text-align: center;
 }
 
+.wider {
+	width: 120%;
+}
+
 
 @media screen and (max-width: 768px) {
 	.home__left--text{

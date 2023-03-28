@@ -30,7 +30,7 @@ import { Government } from './Government';
 import { Technology } from './Technology';
 import { Future } from './Future';
 import { Skills } from './Skills';
-import { nameLinkMap } from './NameLink';
+import { nameLinkMap, makeId } from './NameLink';
 
 import {PDFDownloadLink} from '@react-pdf/renderer';
 import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
@@ -41,22 +41,22 @@ import './TrainingPlan.css';
 const options = [
     {
         id: 0,
-        text: 'الحوكمة و الرقابة',
+        text: 'الحوكمة والرقابة',
         icon: completed1,
-        hoverText: "وهي الدورات التدريبية المتعلقة بالحوكمة والالتزام داخل البنك والتي تساعدنا جميعاً على فهم القواعد والسلوكيات المتبعة",
+        hoverText: "هي نظام الإدارة المبني على سياسات وقواعد تحكم صنع القرار داخل المؤسسة بما يضمن الشفافية والافصاح والفصل بين المسئوليات وتحقيق الفعالية في استغلال الموارد مع الالتزام الكامل بتعليمات الجهات الرقابية للحفاظ على استقرار وسلامة المؤسسة",
         
     },
     {
         id: 1,
         text: 'الوعي التكنولوجي',
         icon: completed2,
-        hoverText: "وهي الدورات التدريبية التي تغطي مهارات تكنولوجيا المعلومات وإستخدام أفضل وسائل التكنولوجيا الحديثة لإتمام المهام بشكل أفضل",
+        hoverText: "هو القدرة على استخدام أدوات التكنولوجيا بشكل مسؤول ومناسب وفعال لإدارة المعلومات. وذلك من خلال امتلاك معرفة وفهم جيدين للتكنولوجيا الحديثة",
     },
     {
         id: 2,
         text: 'مستقبل الاعمال',
         icon: completed3,
-        hoverText: "وهي الدورات التدريبية في موضوعات متقدمة متعلقة بمستقبل البنك لمساعدتنا جميعاً على مواكبة التطور السريع في القطاع المصرفي",
+        hoverText: "رؤية عملية لمجموعة من الحلول المبتكرة تمثل أدوات التمكين التى تدعم مواكبة التطور الذي يفرضه الواقع العملى المستقبلي",
     },
     {
         id: 3,
@@ -66,11 +66,24 @@ const options = [
     },
     {
         id: 4,
-        text: 'المهارات السلوكية و الإدارية ',
+        text: 'المهارات السلوكية والإدارية',
         icon: completed5,
-        hoverText: "وهي الدورات التدريبية التي تهدف إلى تطوير المهارات الشخصية والإدارية والقيادية بهدف الوصول إلى مستوى الكفاءة الإدارية المطلوب للوظيفة",
+        hoverText: "هي القدرات والإمكانيات المختلفة التي يمتلكها الفرد بمستويات ودرجات معينة والتي تساهم في تطور وتحسن اداءة الوظيفي والشخصي بشكل مستمر وبالتالي تنعكس على نجاح المؤسسة",
     },
 ];
+
+const pillarName = {
+    0: 'الحوكمة والرقابة',
+    1: 'الوعي التكنولوجي',
+    2: 'مستقبل الاعمال',
+    3: 'المهارات الفنية',
+    4: 'المهارات السلوكية والإدارية',
+}
+
+const getPillarName = (pid) => {
+    const pname = pillarName[pid];
+    return !pname ? 'الحوكمة والرقابة' : pname
+}
 
 function NavOption(props) {
     const [active, setActive] = useState(false);
@@ -135,21 +148,14 @@ function LowerCardElementWithToolTip(props){
 }
 
 function CourseCard(props){
-    let name = props.name;
-    name = name.trim();
-    // remove any \n or \t or \r 
-    name = name.replace(/(\r\n|\n|\r|\t)/gm, "");
-    let link = '';
     // if name not exist in map return default link
-    if (!nameLinkMap[name]) {
-        console.log(name);
-        link = 'default';
-    }else {
-        link = nameLinkMap[name];
+    const id = makeId(props.name, props.group, props.sector, props.degree, props.pillar)
+    let link = nameLinkMap[id];
+    if (!link) {
+        link = 'سيتم الإعلان عن طريقة التسجيل لاحقا..';
     }
+    console.log(`${id} => ${link}`);
     let isLink = link.includes('http');
-
-
     return (
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
@@ -166,14 +172,14 @@ function CourseCard(props){
                <LowerCardElement duration={props.duration} firstIcon={props.firstIcon} />          
                <LowerCardElement duration={props.attendance} firstIcon={props.secondIcon} />  
                {/* <LowerCardElementWithToolTip duration={props.level} firstIcon={props.thirdIcon} />        */}
-            </div>
             {/* NBE button link in new tab*/}
 
-            {isLink && <a href={link} target="_blank">
-                <button className='courseCard__button'  >التسجيل</button>
-            </a>}
-            { !isLink && <p className='courseCard__notLink'>{link}</p>}
+                {isLink && <a href={link} target="_blank">
+                    <button className='courseCard__button'  >التسجيل</button>
+                </a>}
+                { !isLink && <p className='courseCard__notLink'>{link}</p>}
         
+            </div>
         </div>
     );
 }
@@ -237,9 +243,10 @@ function TrainingPlan() {
       
 
       let components = [];
-      const sector = localStorage.getItem('اسم القطاع');
       const group = localStorage.getItem('اسم المجموعة');
+      const sector = localStorage.getItem('اسم القطاع');
       const degree = localStorage.getItem(' الدرجة الوظيفية');
+
 
       // if activeId = 1 for technology mak component = Technology 
         if (activeId === 0){
@@ -272,12 +279,11 @@ function TrainingPlan() {
 
       //clearSelectors :  make the setRegister value the defulte value and clear local storage items  sector group ans jobLevel 
         const clearSelectors = () => {
-            // localStorage.removeItem('اسم القطاع');
-            // localStorage.removeItem('اسم المجموعة');
-            // localStorage.removeItem(' الدرجة الوظيفية');
-            // dispatch(setRegister({value:'group'}));
+            localStorage.removeItem('اسم القطاع');
+            localStorage.removeItem('اسم المجموعة');
+            localStorage.removeItem(' الدرجة الوظيفية');
+            dispatch(setRegister({value:'group'}));
             dispatch(setActiveId(4));
-
         }
     return (
         <div className="trainingPlan" >
@@ -292,7 +298,20 @@ function TrainingPlan() {
                 </div>
                 {displayedComponents.length > 0 && <div className='trainingPlan__content'>
                     {displayedComponents.map((course) => (
-                        <CourseCard key={course.id} name={course.name} description={course.description} duration={course.duration} firstIcon={courseIcon1} attendance={course.attendance} secondIcon={courseIcon2} level={course.job_category} thirdIcon={courseIcon3} />
+                        <CourseCard 
+                            key={course.id}
+                            name={course.name}
+                            description={course.description}
+                            duration={course.duration}
+                            firstIcon={courseIcon1}
+                            attendance={course.attendance}
+                            secondIcon={courseIcon2}
+                            group={group}
+                            sector={sector}
+                            degree={degree}
+                            pillar={getPillarName(activeId)}
+                            thirdIcon={courseIcon3}
+                        />
                     ))}
                 </div>}
                 { displayedComponents.length === 0 && <div className="trainingPlan__content--null">سوف يتم اتاحة البرامج الخاصة بهذا القسم في أقرب وقت</div> }
@@ -303,11 +322,11 @@ function TrainingPlan() {
                 </Link>
             
             
-                <PDFDownloadLink document={<PDFDocumentNBE />} fileName="الخطة التدريبية للعاملية بالبنك الاهلي المصري.pdf">
+                {/* <PDFDownloadLink document={<PDFDocumentNBE />} fileName="الخطة التدريبية للعاملية بالبنك الاهلي المصري.pdf">
                     {({ blob, url, loading, error }) =>
                         loading ? 'Loading document...' : <NBEButton text="تحميل الخطة" marginBottom ="0" />
                     }
-                </PDFDownloadLink>
+                </PDFDownloadLink> */}
                 
             </div>
         </div>

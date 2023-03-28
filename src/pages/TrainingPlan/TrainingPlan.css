@@ -108,6 +108,8 @@
     height: 60%;
     border-radius: 10px;
     text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .courseCard__upperCard--title{
@@ -164,7 +166,7 @@
 }
 
 .trainingPlan__buttons{
-    width: 90%;
+    /* width: 90%; */
     height: 10%;
     display: flex;
     justify-content: center;
