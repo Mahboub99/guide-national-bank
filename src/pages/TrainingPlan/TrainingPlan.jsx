@@ -31,6 +31,7 @@ import { Technology } from './Technology';
 import { Future } from './Future';
 import { Skills } from './Skills';
 import { nameLinkMap, makeId } from './NameLink';
+// import { result } from './result';
 
 import {PDFDownloadLink} from '@react-pdf/renderer';
 import {PDFDocumentNBE} from '../../components/PDFpage/PDFpage';
@@ -149,13 +150,16 @@ function LowerCardElementWithToolTip(props){
 
 function CourseCard(props){
     // if name not exist in map return default link
-    const id = makeId(props.name, props.group, props.sector, props.degree, props.pillar)
-    let link = nameLinkMap[id];
-    if (!link) {
-        link = 'سيتم الإعلان عن طريقة التسجيل لاحقا..';
-    }
-    console.log(`${id} => ${link}`);
+    //const id = makeId(props.name, props.group, props.sector, props.degree, props.pillar)
+    let link = props.link ;
     let isLink = link.includes('http');
+    console.log(isLink);
+    if (!isLink) {
+        link = 'سيتم الإعلان عن طريقة التسجيل لاحقا..';
+        console.log(link)
+    }
+    // console.log(`${id} => ${link}`);
+    
     return (
         <div className='courseCard'>
             <div className='courseCard__upperCard'>
@@ -247,6 +251,16 @@ function TrainingPlan() {
       const sector = localStorage.getItem('اسم القطاع');
       const degree = localStorage.getItem(' الدرجة الوظيفية');
 
+    //    // select objects that have course_category = "الحوكمة والرقابة"
+    //    const Government = result.filter((obj) => obj.course_category === "الحوكمة والرقابة");
+    //    // select objects that have course_category = "المهارات السلوكية والإدارية"
+    //    const Behavior = result.filter((obj) => obj.course_category === "المهارات السلوكية والإدارية");
+    //    // select objects that have course_category = "مستقبل الاعمال"
+    //    const Future = result.filter((obj) => obj.course_category === "مستقبل الاعمال");
+    //    // select objects that have course_category = "المهارات الفنية"
+    //    const Skills = result.filter((obj) => obj.course_category === "المهارات الفنية");
+    //    // select objects that have course_category = "الوعي التكنولوجي"
+    //    const Technology = result.filter((obj) => obj.course_category === "الوعي التكنولوجي");
 
       // if activeId = 1 for technology mak component = Technology 
         if (activeId === 0){
@@ -305,6 +319,7 @@ function TrainingPlan() {
                             duration={course.duration}
                             firstIcon={courseIcon1}
                             attendance={course.attendance}
+                            link={course.link}
                             secondIcon={courseIcon2}
                             group={group}
                             sector={sector}
