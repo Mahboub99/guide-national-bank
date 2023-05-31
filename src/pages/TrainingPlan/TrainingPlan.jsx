@@ -336,12 +336,12 @@ function TrainingPlan() {
                     <NBEButton text="الرجوع" marginBottom ="0" onClick={clearSelectors} />
                 </Link>
             
-            
+{/*             
                 <PDFDownloadLink document={<PDFDocumentNBE />} fileName="الخطة التدريبية للعاملية بالبنك الاهلي المصري.pdf">
                     {({ blob, url, loading, error }) =>
                         loading ? 'Loading document...' : <NBEButton text="تحميل الخطة" marginBottom ="0" />
                     }
-                </PDFDownloadLink> 
+                </PDFDownloadLink>  */}
                 
             </div>
         </div>
