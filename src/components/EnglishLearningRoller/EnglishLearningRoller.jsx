@@ -11,6 +11,11 @@ import rightArrow from "../../assets/right_arrow.png";
 
 import "./EnglishLearningRoller.css"
 
+const  englishLinks = {
+    0: 'https://erpprodapp.nbe.ahly.bank:443/OA_HTML/RF.jsp?function_id=22702&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=q-Srf3Agyj0FK3lq_kISgw..&params=Ej.frPRlOzUYbLes7oXO-9J7dcHcFH0j4cwOron20XpOpz74Zp-8WibSthQ280tD2l.2fb8swesWQ.WTNl38nw',
+    1: 'https://erpprodapp.nbe.ahly.bank:443/OA_HTML/RF.jsp?function_id=22702&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=q-Srf3Agyj0FK3lq_kISgw..&params=OqjSGzA8P3JNGp0s5Y5p97vX0TniFkuUEz5CJQoNf8ROpz74Zp-8WibSthQ280tD2l.2fb8swesWQ.WTNl38nw',
+    2: 'https://erpprodapp.nbe.ahly.bank:443/OA_HTML/RF.jsp?function_id=22702&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=q-Srf3Agyj0FK3lq_kISgw..&params=zRFQRbBycZ.qJn6MjdsvTHwrCqmoqEZgoNIo2AHnmhFOpz74Zp-8WibSthQ280tD2l.2fb8swesWQ.WTNl38nw'
+}
 
 function EnglishLearningRoller(props){
     const englishLearnIndex = useSelector(state => state.englishLearnIndex.value);
@@ -43,7 +48,7 @@ function EnglishLearningRoller(props){
                 </p>
             </div>
             <div className='englishLearningRoller__button'>
-                <NBEButton text='تسجيل' onClick={()=>{}} marginBottom='0' />
+                <NBEButton text='تسجيل' onClick={()=>{window.open(englishLinks[englishLearnIndex], '_blank')}} marginBottom='0' />
             </div>
             {/** nbe button  تسجيل */}
         </div>   

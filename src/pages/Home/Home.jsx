@@ -12,7 +12,8 @@ import './Home.css';
 function Home() {
 	const count = useSelector((state) => state.counter.value)
 	const dispatch = useDispatch()
-
+	// save the url on local storage
+	localStorage.setItem('home_url', window.location.href);
 	return (
 		<div className="home">
 			<div className="home__container">
