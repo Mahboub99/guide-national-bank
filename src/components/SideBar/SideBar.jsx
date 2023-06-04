@@ -77,7 +77,9 @@ function SideBar() {
     localStorage.removeItem(' الدرجة الوظيفية');
     dispatch(setRegister({value:'group'}));
     dispatch(setActiveId(4));
-    window.location = "/";
+    // get home_url from local storage
+    const home_url = localStorage.getItem('home_url');
+    window.location = home_url;
   }
     return (
         <div className="sideBar">

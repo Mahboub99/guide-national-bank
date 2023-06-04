@@ -10,14 +10,14 @@ function Introduction() {
 		<div className="introduction">
 			<div className="introduction__container">
 			<p className="introduction__text" dir='rtl'>
-				تم اعداد هذا الدليل الاسترشادي من قبل قطاع المعرفة والتطوير بهدف
+				تم اعداد هذا الدليل الاسترشادي  بهدف
 				تعريفكم بالمسارات التدريبية المختلفة والمخصصة لمختلف قطاعات
 				مصرفنا، برجاء تحديد المجموعة الخاصة بكم والقطاع والدرجة الوظيفية
 				لعرض المسار التدريبي والبرامج والموضوعات الخاصة بكم.	
 			</p>
-			<p className='introduction__text--sign'>
+			{/* <p className='introduction__text--sign'>
 				"مجموعة الموارد البشرية"
-			</p>
+			</p> */}
 			
 			<Link to="/registration" className="introduction__link">
 				<NBEButton text="التالي" marginBottom ="-100px" />
