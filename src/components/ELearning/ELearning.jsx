@@ -13,7 +13,7 @@ import ELearning6Pluralsight from '../ELearningOptionsPages/ELearning6Pluralsigh
 import ELearning7Almentor from '../ELearningOptionsPages/ELearning7Almentor';
 import ELearning8EKB from '../ELearningOptionsPages/ELearning8EKB';
 import ELearning9Edara from '../ELearningOptionsPages/ELearning9Edara';
-
+import ELearning10AIHR from '../ELearningOptionsPages/ELearning10AIHR';
 
 import PhoneImg1 from '../../assets/phone1.png';
 import PhoneImg2 from '../../assets/phone2.png';
@@ -24,6 +24,7 @@ import PhoneImg6 from '../../assets/phone6.png';
 import PhoneImg7 from '../../assets/phone7.png';
 import PhoneImg8 from '../../assets/phone8.png';
 import PhoneImg9 from '../../assets/phone9.png';
+import PhoneImg10 from '../../assets/phone10.png';
 
 
 import './ELearning.css';
@@ -65,6 +66,10 @@ const options = [
     {
         text: 'بنك المعرفة المصري',
         component: <ELearningOptionPage img={PhoneImg8} textComponent={<ELearning8EKB/>} />
+    },
+    {
+        text: 'منصة تطوير الموارد البشرية',
+        component: <ELearningOptionPage img={PhoneImg10} textComponent={<ELearning10AIHR/>} />
     },
 ];
 
