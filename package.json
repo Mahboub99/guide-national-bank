@@ -27,12 +27,14 @@
     "react-scripts": "^5.0.1",
     "react-to-pdf": "^0.0.14",
     "redux": "^4.2.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "generate:sheet": "node convertsheetToJsObjects.js",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
