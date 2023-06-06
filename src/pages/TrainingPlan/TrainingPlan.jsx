@@ -333,7 +333,7 @@ function TrainingPlan() {
             </div>
             <div className='trainingPlan__buttons' >
                 <Link to="/registration" className='trainingPlan__Link' >
-                    <NBEButton text="الرجوع" marginBottom ="0" onClick={clearSelectors} />
+                    <NBEButton text="الرجوع لاختيار المسار التدريبي" marginBottom ="0" onClick={clearSelectors} />
                 </Link>
             
 {/*             

@@ -57,13 +57,13 @@
   
   .ELearningModalOption__container--option{
     width: 90%;
-    
-    height: 50px;
+   
+    height: 80px;
     border-radius: 10px;
     background-color: #00643E;
     color: white;
     font-family: 'Tajawal', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -76,6 +76,6 @@
     border: 5px solid #F49E3B;
   }
   .ELearningModalOption__container--option--textContainer{
-    width: 75%;
-    font-size: 20px;
+    width: 90%;
+    font-size: 15px;
   }

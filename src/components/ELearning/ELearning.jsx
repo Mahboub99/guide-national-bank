@@ -31,39 +31,39 @@ import './ELearning.css';
 // array of objects of 2 elements text and component
 const options = [
     {
-        text: "Moody's",
+        text: "الشهادات المتخصصة في الأئتمان والتجزئة والمخاطر",
         component: <ELearningOptionPage img={PhoneImg4} textComponent={<ELearning4Moody/>} />
     },
     {
-        text: 'LinkedIn',
+        text: 'مسارات التطوير للعاملين الجدد (السنوات الثلاث الأولى)',
         component: <ELearningOptionPage img={PhoneImg1}  textComponent={<ELearning1LinkedIn/>} />
     },
     {
-        text: 'Almentor',
+        text: 'برامج التطوير في مجالات متنوعة باللغة العربية',
         component: <ELearningOptionPage img={PhoneImg7} textComponent={<ELearning7Almentor/>} />
     },
     {
-        text: 'Coursera',
+        text: 'برامج وشهادات متخصصة باعتمادات دولية',
         component: <ELearningOptionPage img={PhoneImg3} textComponent={<ELearning3Coursera/>} />
     },
+    // {
+    //     text: 'برامج تكنولوجيا المعلومات',
+    //     component: <ELearningOptionPage img={PhoneImg6} textComponent={<ELearning6Pluralsight/>} />
+    // },
     {
-        text: 'Pluralsight',
-        component: <ELearningOptionPage img={PhoneImg6} textComponent={<ELearning6Pluralsight/>} />
-    },
-    {
-        text: 'VidoeArts',
+        text: 'برامج تطوير المهارات السلوكية والإدارية والقيادية',
         component: <ELearningOptionPage img={PhoneImg5} textComponent={<ELearning5VideoArts/>} />
     },
     {
-        text: 'Edara.com',
+        text: ' كتب وملخصات ومقروءة ومسموعة',
         component: <ELearningOptionPage img={PhoneImg9} textComponent={<ELearning9Edara/>} />
     },
     {
-        text: 'Harvard BR',
+        text: 'منصة تطوير إدارة الأعمال والأفراد',
         component: <ELearningOptionPage img={PhoneImg2} textComponent={<ELearning2Harvard/>} />
     },
     {
-        text: 'EKB',
+        text: 'بنك المعرفة المصري',
         component: <ELearningOptionPage img={PhoneImg8} textComponent={<ELearning8EKB/>} />
     },
 ];
