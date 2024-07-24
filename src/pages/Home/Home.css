@@ -24,11 +24,10 @@
 }
 .home__right {
 	width: 50%;
-	padding-right: 50px;
-	
+	padding-right: 10px;
 }
 .home__right--image{
-	width:150%;
+	width:100%;
 }
 .home__left--text{
 	width: 100%;

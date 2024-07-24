@@ -12,16 +12,16 @@ function ELearningLinkedIn() {
                     المجالات.  <span className='eLearningOptionPage__text--orange'>مع أكثر من 15000 دورة تدريبية وتوصية مخصصة،</span> يمكنك اكتشاف
                     الدورات التدريبية المتعلقة بمجال عملك واهتماماتك وإكمالها وتتبعها يمكننك التسجيل  من خلال
                 </p>
-                <a className='eLearningOptionPage__text--orange' href='https://www.linkedin.com/learning ' target="_blank">
-                    <p className='eLearningOptionPage__text--orange'>  ELearningLinkedIn:الرابط التالي</p>
-                </a>
-                <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50' >
-                    هذه المسارات متاحة فقط للعاملين الجدد (مصرفي ب - مصرفي أ) 
-                   <span className='eLearningOptionPage__text--orange'>
-                        وبحدأقصي ثلاث سنوات من سنة التعيين
-                    </span> 
+                <p>
+                    <a className='eLearningOptionPage__text--orange' href='https://www.linkedin.com/learning ' target="_blank">
+                        <span className='eLearningOptionPage__text--orange'>  ELearningLinkedIn:الرابط التالي</span>
+                    </a>
                 </p>
-                <p className='eLearningOptionPage__text--orange eLearningOptionPage--margin-50'>وتم ارسال رابط التفعيل للحضور المستهدف</p>
+                <p className="eLearningOptionPage__text--green eLearningOptionPage--margin-50">
+                ستكون المنصة متاحة لعدد محدود من العاملين وفقا وأولوية التسجيل واستيفاء موافقة المدير المباشر والمستوى الإداري الأعلى على نظام الاوراكل من خلال الرابط التالي LinkedIn Registration
+                </p>
+
+                <p style={{direction: "rtl"}} className='eLearningOptionPage__text--orange eLearningOptionPage--margin-50'>سيتم ارسال تعليمات و طريقة الدخول للزملاء المسجلين تباعا</p>
             </div>
     )
 }

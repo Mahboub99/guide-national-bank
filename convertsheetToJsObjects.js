@@ -16,61 +16,53 @@ const XLSX = require('xlsx');
 
 const keyMap = {
     "اسم البرنامج": "name",
-    "مدة البرنامج": "duration",
+    "Program Name": "name_en",
+    "مدة البرنامج ساعات": "duration",
     "طريقة الحضور": "attendance",
-    "وصف واضح للبرنامج يعكس طبيعته و العائد المرجو من حضوره": "description",
-    "المستوي الوظيفي المستهدف ": "level",
+    "وصف البرنامج": "description",
+    "المستوي الوظيفي المستهدف": "level",
     "ملاحظات": "notes",
-    "الكفاءات الوظيفية التي يغطيها البرنامج ": "job_category",
     "الكفاءات الوظيفية التي يغطيها البرنامج": "job_category",
-    "Pillar ": "course_category",
+    "Pillar": "course_category",
     "Group": "group",
     "Unit": "unit",
-    "link ": "link",
-    "link": "link"
-
+    "link": "link",
+    "Program Code": "program_code",
+    "Priority": "priority",
 }
 
-/**
- *   {
-    "name": "Trade Finance \n",
-    "duration": "3 Hours",
-    "attendance": "فصول - تعلم عن بعد",
-    "description": "التعريف بنشاط تمويل التجارة الدولية و الاعتمادات المستندية وخطابات الضمان ",
-    "level": "مصرفي ب",
-    "undefined": "السنة الأولى ",
-    "job_category": "التفكير بصورة تجارية",
-    "course_category": "المهارات السلوكية والإدارية",
-    "group": "قطاع الرقابه الداخليه",
-    "unit": "قطاع الرقابه الداخليه",
-    "link": "https://erpprodapp.nbe.ahly.bank:443/OA_HTML/RF.jsp?function_id=22702&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=5CFw--tRJEZSjpnYxxkFXg..&params=1AN-n2Yyda-qWUIsS9rdbOj1LEkqFrkIqBVgewKY.SFOpz74Zp-8WibSthQ280tD2l.2fb8swesWQ.WTNl38nw"
-  },
- */
-// console.log(keyMap["اسم البرنامج"]);
 // Function to convert Excel sheet to an array of objects
 function convertSheetToObjects(sheet) {
   const data = XLSX.utils.sheet_to_json(sheet);
   const result = [];
+  const keys = new Set();
 
-  data.forEach((row) => {
+  data.forEach((row, _i) => {
     const obj = {};
-
     Object.keys(row).forEach((key) => {
-        // key = keyMap[key];
-        // console.log(keyMap[key]);
-      obj[keyMap[key]] = row[key];
+      const trimmedKey = key.trim();
+
+      if (!keys.has(trimmedKey)) {
+        console.log(`[DEBUG] new key: "${trimmedKey}"`);
+        keys.add(trimmedKey);
+      }
+
+      obj[keyMap[trimmedKey]] = row[key];
     });
 
+    console.log(`[DEBUG] Row ${_i} scanned successfully`);
     result.push(obj);
   });
+
+  console.log(`[DEBUG] Example object: ${JSON.stringify(result[0])}`);
 
   return result;
 }
 
 // Function to read Excel file and convert to an array of objects
-function convertXLSXToJSObject(filePath) {
+function convertXLSXToJSObject(filePath, sheetNum) {
   const workbook = XLSX.readFile(filePath);
-  const firstSheetName = workbook.SheetNames[0];
+  const firstSheetName = workbook.SheetNames[sheetNum];
   const firstSheet = workbook.Sheets[firstSheetName];
 
   const jsObject = convertSheetToObjects(firstSheet);
@@ -79,45 +71,47 @@ function convertXLSXToJSObject(filePath) {
 
 // Usage example
 const filePath = process.argv[2];
+const sheetNum = process.argv[3];
 console.log("generating objects from : " + filePath + " ..." + "\n");
-const result = convertXLSXToJSObject(filePath);
+const result = convertXLSXToJSObject(filePath, sheetNum);
 
 // trm the data
-result.forEach((obj) => {
+result.forEach((obj, _i) => {
     if (obj.name) {
-        obj.name = obj.name.trim();
+        obj.name = `${obj.name}`.trim();
     }
     if (obj.duration) {
-        obj.duration = obj.duration.trim();
+        obj.duration = `${obj.duration}`.trim();
     }
     if (obj.attendance) {
-        obj.attendance = obj.attendance.trim();
+        obj.attendance = `${obj.attendance}`.trim();
     }
     if (obj.description) {
-        obj.description = obj.description.trim();
+        obj.description = `${obj.description}`.trim();
     }
     if (obj.level) {
-        obj.level = obj.level.trim();
+        obj.level = `${obj.level}`.trim();
     }
     if (obj.notes) {
-        obj.notes = obj.notes.trim();
+        obj.notes = `${obj.notes}`.trim();
     }
     if (obj.job_category) {
-        obj.job_category = obj.job_category.trim();
+        obj.job_category = `${obj.job_category}`.trim();
     }
     if (obj.course_category) {
-        obj.course_category = obj.course_category.trim();
+        obj.course_category = `${obj.course_category}`.trim();
     }
     if (obj.group) {
-        obj.group = obj.group.trim();
+        obj.group = `${obj.group}`.trim();
     }
     if (obj.unit) {
-        obj.unit = obj.unit.trim();
+        obj.unit = `${obj.unit}`.trim();
     }
     if (obj.link) {
-        obj.link = obj.link.trim();
+        obj.link = `${obj.link}`.trim();
     }
 
+    console.log(`[DEBUG] Row ${_i} processed successfully`);
 });
 
 //write the result to a js file and export make eveyu key:value on a new line and every objects startes with new line

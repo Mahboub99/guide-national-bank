@@ -10,9 +10,9 @@ function ELearning9Edara() {
             </p>
             <p className='eLearningOptionPage__text--green eLearningOptionPage--margin-50'>
                 <p>edara.com خطوات الدخول علي منصة  </p>
-                <p>  
-                    <span className='eLearningOptionPage__text--orange' > تطبيق Staff NBE </span>  
+                <p style={{direction: "rtl"}}>
                     الدخول من خلال 
+                    <span className='eLearningOptionPage__text--orange' > تطبيق Staff NBE</span>  
                 </p>
                 <span> 
                     و اتباع الخطوات المذكورة

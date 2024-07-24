@@ -151,7 +151,7 @@ function LowerCardElementWithToolTip(props){
 function CourseCard(props){
     // if name not exist in map return default link
     //const id = makeId(props.name, props.group, props.sector, props.degree, props.pillar)
-    let link = props.link ;
+    let link = props.link ?? "";
     let isLink = link.includes('http');
     console.log(isLink);
     if (!isLink) {

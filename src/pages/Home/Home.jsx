@@ -19,7 +19,7 @@ function Home() {
 			<div className="home__container">
 				<div className="home__left" >
 					<p1 className="home__left--text wider">مسارات التطوير</p1>
-					<p1 className="home__left--text wider">2023/2024</p1>
+					<p1 className="home__left--text wider">2024/2025</p1>
 				</div>
 				<div className="home__right">
 					<img className="home__right--image" src={startBage} alt="start page" />

@@ -32,11 +32,11 @@ import './ELearning.css';
 // array of objects of 2 elements text and component
 const options = [
     {
-        text: "الشهادات المتخصصة في الأئتمان والتجزئة والمخاطر",
+        text: "برامج وشهادات متخصصة في الائتمان والتجزئة والمخاطر",
         component: <ELearningOptionPage img={PhoneImg4} textComponent={<ELearning4Moody/>} />
     },
     {
-        text: 'مسارات التطوير للعاملين الجدد (السنوات الثلاث الأولى)',
+        text: 'برامج وشهادات دولية في مجالات متنوعة',
         component: <ELearningOptionPage img={PhoneImg1}  textComponent={<ELearning1LinkedIn/>} />
     },
     {
@@ -44,25 +44,25 @@ const options = [
         component: <ELearningOptionPage img={PhoneImg7} textComponent={<ELearning7Almentor/>} />
     },
     {
-        text: 'برامج وشهادات متخصصة باعتمادات دولية',
+        text: 'برامج وشهادات متخصصة بإعتمادات دولية',
         component: <ELearningOptionPage img={PhoneImg3} textComponent={<ELearning3Coursera/>} />
     },
     // {
     //     text: 'برامج تكنولوجيا المعلومات',
     //     component: <ELearningOptionPage img={PhoneImg6} textComponent={<ELearning6Pluralsight/>} />
     // },
-    {
-        text: 'برامج تطوير المهارات السلوكية والإدارية والقيادية',
-        component: <ELearningOptionPage img={PhoneImg5} textComponent={<ELearning5VideoArts/>} />
-    },
+    // {
+    //     text: 'برامج تطوير المهارات السلوكية والإدارية والقيادية',
+    //     component: <ELearningOptionPage img={PhoneImg5} textComponent={<ELearning5VideoArts/>} />
+    // },
     {
         text: ' كتب وملخصات ومقروءة ومسموعة',
         component: <ELearningOptionPage img={PhoneImg9} textComponent={<ELearning9Edara/>} />
     },
-    {
-        text: 'منصة تطوير إدارة الأعمال والأفراد',
-        component: <ELearningOptionPage img={PhoneImg2} textComponent={<ELearning2Harvard/>} />
-    },
+    // {
+    //     text: 'منصة تطوير إدارة الأعمال والأفراد',
+    //     component: <ELearningOptionPage img={PhoneImg2} textComponent={<ELearning2Harvard/>} />
+    // },
     {
         text: 'بنك المعرفة المصري',
         component: <ELearningOptionPage img={PhoneImg8} textComponent={<ELearning8EKB/>} />
